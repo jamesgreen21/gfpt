@@ -1,0 +1,134 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+          type="text/css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" type="text/css"/>
+    <title>Title</title>
+</head>
+
+<body class="black">
+
+<!-- Dropdown Structure -->
+<ul id="dropdown1" class="dropdown-content grey darken-3">
+    <li><a class="white-text modal-trigger" href="#modalReg"><i class="material-icons">play_arrow</i>Login</a></li>
+    <li class="divider"></li>
+    <li><a class="white-text" href="#!"><i class="material-icons">fiber_new</i>Register</a></li>
+</ul>
+
+<!--Navbar-->
+<nav class="z-depth-3">
+    <div class="nav-wrapper grey darken-4">
+        <a href="#" class="brand-logo center"><img class="small-logo" src="{% static 'img/logo-2.png' %}" alt=""></a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="left hide-on-med-and-down">
+            <li class="grey darken-3"><a href="#">Home</a></li>
+            <li><a class="modal-trigger" href="#modalReg"
+                   onclick="M.toast({html: 'Please Login', displayLength: '1500', classes: 'rounded'})">Blog</a></li>
+            <li><a class="modal-trigger" href="#modalReg"
+                   onclick="M.toast({html: 'Please Login', displayLength: '1500', classes: 'rounded'})">Calculator</a>
+            </li>
+        </ul>
+        <ul class="right hide-on-med-and-down">
+            <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">
+                Welcome User
+                <i class="material-icons right">arrow_drop_down</i>
+            </a></li>
+        </ul>
+    </div>
+</nav>
+
+<!--Sidenav-->
+<ul class="sidenav grey darken-4" id="mobile-demo">
+    <li><a class="white-text mt10" href="#!"><i class="material-icons white-text">home</i>Home</a></li>
+    <li><a class="white-text mt10 modal-trigger" href="#modalReg"
+           onclick="M.toast({html: 'Please Login', displayLength: '1500', classes: 'rounded'})"><i
+            class="material-icons white-text">chat</i>Blog</a></li>
+    <li><a class="white-text mt10 modal-trigger" href="#modalReg"
+           onclick="M.toast({html: 'Please Login', displayLength: '1500', classes: 'rounded'})"><i
+            class="material-icons white-text">format_list_numbered</i>Calculator</a>
+    </li>
+    <li>
+        <div class="divider mt10 mb10"></div>
+    </li>
+    <li><a class="white-text mt10 modal-trigger" href="#modalReg"><i class="material-icons white-text">play_arrow</i>Login</a>
+    </li>
+    <li><a class="white-text mt10" href="#!"><i class="material-icons white-text">fiber_new</i>Register</a></li>
+</ul>
+
+<!--Block Content-->
+<div class="container pt50">
+    {% block content %}{% endblock %}
+</div>
+
+<!--Footer Content-->
+<footer class="page-footer p0">
+    <div class="grey darken-4">
+        <div class="pt20 pb20 center-align">
+            <img class="small-logo" src="{% static 'img/logo-2.png' %}" alt="">
+        </div>
+    </div>
+    <div class="blue-grey darken-4 pt20 pb20">
+        <div class="container">
+            <div class="row">
+                <div class="col l5 s12 center-align">
+                    <h4 class="red-text">Get Regular Updates</h4>
+                    <p>Subscribe to our weekly drop of exclusive knowledge. Just enter your email below:</p>
+                    <form action="">
+                        <div class="input-field">
+                            <input id="email" type="email" class="validate">
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="btn-field center-align">
+                            <a class="btn-large red darken-1">Let's go!</a>
+                        </div>
+                    </form>
+                </div>
+                <div class="col s12 hide-on-large-only">
+                    <div class="social pt50 center-align">
+                        <a href="#" class="white-text pr10 pl10"><i class="fa fa-facebook-square"></i></a>
+                        <a href="#" class="white-text pr10 pl10"><i class="fa fa-instagram"></i></a>
+                        <a href="#" class="white-text pr10 pl10"><i class="fa fa-youtube-square"></i></a>
+                        <a href="#" class="white-text pr10 pl10"><i class="fa fa-twitter-square"></i></a>
+                    </div>
+                </div>
+                <div class="col l6 offset-l1 hide-on-med-and-down center-align social">
+                    <div class="pt20 pb10">
+                        <a href="#" class="white-text pr10"><i class="fa fa-facebook-square"></i></a>
+                        <a href="#" class="white-text pl10"><i class="fa fa-instagram"></i></a>
+                    </div>
+                    <div class="pt10 pb10">
+                        <a href="#" class="white-text pr10"><i class="fa fa-youtube-square"></i></a>
+                        <a href="#" class="white-text pl10"><i class="fa fa-twitter-square"></i></a>
+                    </div>
+                    <div class="pt10 pb10">
+                        <img src="{% static 'img/GF_Logo_2c.png' %}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright black">
+        <div class="container">
+            © Geoff Foden Personal Training
+        </div>
+    </div>
+</footer>
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="{% static 'js/script.js' %}">
+
+
+</script>
+</body>
+</html>

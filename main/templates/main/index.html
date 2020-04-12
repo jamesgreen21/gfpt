@@ -1,0 +1,211 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Header -->
+<div class="parallax-container main-sct-header">
+    <div class="parallax">
+        <img src="{% static 'img/profile-main-long.jpg' %}">
+    </div>
+    <img class="main-reg-logo" src="{% static 'img/GF_Logo_2c.png' %}" alt="">
+    <div class="main-reg-container ">
+        <div class="pb10"><a class="black-text btn-large grey lighten-5 modal-trigger" href="#modalReg">Login</a>
+        </div>
+        <div><a class="btn-large red darken-1">Sign Up</a></div>
+    </div>
+</div>
+
+<!-- Login *Modal Structure -->
+<div id="modalReg" class="modal white-text">
+    <div class="modal-content blue-grey darken-4 center-align">
+        <h4>LOGIN</h4>
+        <p>Enter email address and password:</p>
+    </div>
+    <div class="divider"></div>
+    <div class="modal-detail grey darken-4">
+        <form class="container pt20 pb20" action="">
+            <div class="input-field">
+                <input id="password" type="password" class="validate">
+                <label for="password">Password</label>
+            </div>
+            <div class="input-field">
+                <input id="email" type="email" class="validate">
+                <label for="email">Email</label>
+            </div>
+            <div class="btn-field center-align pt20 pb20">
+                <a class="mr10 btn-large red darken-1">Na..</a>
+                <a class="btn-large green darken-2">Let's go!</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Customise *Card -->
+<div class="row black white-text">
+    <div class="col s12 center-align">
+        <h2 class="pt20 pb20">Customise your wokouts today</h2>
+        <h4 class="pt15 pb15 red-text">One-on-One | Classes | Online Training | Your place or mine</h4>
+        <ul>
+            <li class="pt10 pb10">
+                Lorem ipsum dolor sit amet, sapien etiam, nunc amet dolor ac odio mauris justo.
+            </li>
+            <li class="pt10 pb10">
+                Luctus arcu, urna praesent at id quisque ac. Arcu es massa vestibulum malesuada, integer vivamus elit eu
+                mauris eus, cum eros quis aliquam wisi.
+            </li>
+            <li class="pt10 pb10">
+                Nulla wisi laoreet suspendisse integer vivamus elit eu mauris hendrerit facilisi, mi mattis pariatur
+                aliquam pharetra eget.
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- Testimonials *Carousel -->
+<div class="row">
+    <div class="offset-s2 col s8 offset-l3 l6">
+        <div class="carousel center">
+            {% for testimonial in testimonials %}
+            <div class="carousel-item white black-text" href="#">
+                <img class="carousel-img" src="{{ testimonial.image.url }}">
+                <a class="black-text btn-large grey lighten-5 modal-trigger" href="#modal{{ testimonial.id }}">See
+                    More</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<!-- Testimonial *Modal Structure -->
+{% for testimonial in testimonials %}
+<div id="modal{{ testimonial.id }}" class="modal center-align white-text">
+    <div class="modal-content blue-grey darken-4">
+        <h2>{{ testimonial.title }}</h2>
+    </div>
+    <div class="divider"></div>
+    <div class="modal-detail grey darken-4 pt20 pb20">
+        <img class="pt10" src="{{ testimonial.image.url }}">
+        <h4 class="pt10"><span class="red-text">Goal: </span>{{ testimonial.goal }}</h4>
+        <p>{{ testimonial.content }}</p>
+    </div>
+</div>
+{% endfor %}
+
+<!-- Logo -->
+<div class="row black white-text pt30 pb30">
+    <div class="col s12 center-align">
+        <img class="main-logo" src="{% static 'img/GF_Logo_2c.png' %}" alt="">
+    </div>
+</div>
+
+<!-- Recent Posts *Card -->
+<div class="row white">
+    <div class="col s12">
+        <h2 class="center-align pt20 pb20">Recent Posts</h2>
+    </div>
+    <div class="col s12 l6">
+        <div class="card hoverable">
+            <div class="card-content">
+                <span class="card-title grey-text text-darken-3">Squats</span>
+            </div>
+            <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator" src="{% static 'img/squats.PNG' %}">
+            </div>
+            <div class="card-content grey-text text-darken-3">
+            <span class="card-title activator"><i class="material-icons left">person_pin</i>Geoff says<i
+                    class="material-icons right">more_vert</i></span>
+                <p>If your squat form is shit, not only are you potentially missing out on gains, but you’re likely
+                    setting
+                    yourself up for potential injury, weakness and imbalances down the line. Here’s some ...
+                </p>
+                <div class="pt10 grey-text text-darken-2">
+                    </span><i class="fa fa-comment"></i> 12
+                    <i class="fa fa-heart red-text"></i> 85
+                </div>
+            </div>
+            <div class="card-reveal">
+                <span class="card-title grey-text text-darken-2"><i
+                        class="material-icons left">person_pin</i> geoff_fodenpt<i
+                        class="material-icons right">close</i></span>
+                <p>Here is some more information about this product that is only revealed once clicked on.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col s12 l6">
+        <div class="card hoverable">
+            <div class="card-content">
+                <span class="card-title grey-text text-darken-3">Mobility</span>
+            </div>
+            <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator" src="{% static 'img/mobility.PNG' %}">
+            </div>
+            <div class="card-content grey-text text-darken-3">
+            <span class="card-title activator"><i class="material-icons left">person_pin</i>Geoff says<i
+                    class="material-icons right">more_vert</i></span>
+                <p>If your squat form is shit, not only are you potentially missing out on gains, but you’re likely
+                    setting
+                    yourself up for potential injury, weakness and imbalances down the line. Here’s some ...
+                </p>
+                <div class="pt10 grey-text text-darken-2">
+                    </span><i class="fa fa-comment"></i> 12
+                    <i class="fa fa-heart red-text"></i> 85
+                </div>
+            </div>
+            <div class="card-reveal">
+                <span class="card-title grey-text text-darken-2"><i
+                        class="material-icons left">person_pin</i> geoff_fodenpt<i
+                        class="material-icons right">close</i></span>
+                <p>Here is some more information about this product that is only revealed once clicked on.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Blog link -->
+<div class="parallax-container main-sct-posts">
+    <div class="parallax">
+        <img src="{% static 'img/dumbbells.jpg' %}">
+    </div>
+    <div class="main-img-posts">
+        <img class="circle" src="{% static 'img/profile-main-short (2).jpg' %}" alt="">
+        <h4 class="center-align white-text">Blogs</h4>
+        <div class="pt10 center-align">
+            <a class="black-text btn-large grey lighten-5 modal-trigger" href="#modalReg"
+               onclick="M.toast({html: 'Please Login', displayLength: '1500', classes: 'rounded'})">See More</a>
+        </div>
+    </div>
+</div>
+
+<!-- Advert *Card -->
+<div class="row black white-text">
+    <div class="col s12 center-align">
+        <h3 class="pt20 pb20 red-text"">Online Coaching</h3>
+        <p>In light of the current fucked up world situation.</p>
+        <ul>
+            <li class="pt10 pb10">
+                Why not focus on what you can control ⁣
+            </li>
+            <li class="pt10 pb10">
+                Do something you wouldn’t have had the time or money for in the past
+            </li>
+            <li class="pt10 pb10">
+                Overcome this negative situation with a positive.
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- Sign Up -->
+<div class="parallax-container main-sct-reg">
+    <div class="parallax">
+        <img src="{% static 'img/gym-three.jpg' %}">
+    </div>
+    <div class="main-signup">
+        <h3 class="center-align white-text">Join Now</h3>
+        <div class="pt10 center-align">
+            <a class="btn-large red darken-1" href="##">Get Started</a>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
