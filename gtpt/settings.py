@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 
+import dj_database_url
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -22,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'n5e8jj#a%2df)r8j$n8ut_1#+0nuufblrs!2q*nlt$umraje8l'
 
-# SECURITY WARNING: don't run with debug turned on in production!
+# PRODUCTION MODE: False if not in os.environ
 DEBUG = True
 
 ALLOWED_HOSTS = ['http://127.0.0.1:8000/', '127.0.0.1', 'gfpt.herokuapp.com']
@@ -75,11 +77,9 @@ WSGI_APPLICATION = 'gtpt.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+    'default': dj_database_url.parse('postgres://ygwznvlxyxfilf:3825e8e677e81ad6a0884d0077399945ee864c08180b314a0aa7536d3efd2844@ec2-46-137-84-140.eu-west-1.compute.amazonaws.com:5432/d15ennam5docr5')
 }
 
 

@@ -21,3 +21,12 @@ E
 static/css/styles.css,f\f\ff5f6247d17a4d94e3cf2aed570cdefe538f01e5
 C
 static/js/script.js,1\1\11f6c9936ef56fab6c952aba45c663f45ab7ee58
+8
+Procfile,b\c\bc3c68e880d1a01632bce79f69dd1387c7ba9c54
+@
+requirements.txt,1\9\19359a61ae2446b51b549167b014da2fcf265768
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
+4
+.env,3\c\3c84dcdc6bbe3d7817c49dcdc327b926fea1808a
