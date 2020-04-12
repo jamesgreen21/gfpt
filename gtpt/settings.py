@@ -25,7 +25,7 @@ SECRET_KEY = 'n5e8jj#a%2df)r8j$n8ut_1#+0nuufblrs!2q*nlt$umraje8l'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['http://127.0.0.1:8000/', '127.0.0.1']
+ALLOWED_HOSTS = ['http://127.0.0.1:8000/', '127.0.0.1', 'gfpt.herokuapp.com']
 
 
 # Application definition
