@@ -1,1 +1,1 @@
-web: gunicorn gfpt.wsgi:application
+web: gunicorn gfpt.wsgi
