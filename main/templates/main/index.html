@@ -62,6 +62,7 @@
 </div>
 
 <!-- Testimonials *Carousel -->
+{% if testimonials.all %}
 <div class="row">
     <div class="offset-s2 col s8 offset-l3 l6">
         <div class="carousel center">
@@ -75,8 +76,10 @@
         </div>
     </div>
 </div>
+{% endif %}
 
 <!-- Testimonial *Modal Structure -->
+{% if testimonials.all %}
 {% for testimonial in testimonials %}
 <div id="modal{{ testimonial.id }}" class="modal center-align white-text">
     <div class="modal-content blue-grey darken-4">
@@ -90,6 +93,7 @@
     </div>
 </div>
 {% endfor %}
+{% endif %}
 
 <!-- Logo -->
 <div class="row black white-text pt30 pb30">
