@@ -30,3 +30,23 @@ C
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
 4
 .env,3\c\3c84dcdc6bbe3d7817c49dcdc327b926fea1808a
+B
+accounts/models.py,6\1\61552fe05711cbaa3244c18deedf1d76e08d2649
+@
+accounts/apps.py,1\0\105856a1a16213228e6bf93c0ff567a0b51380c4
+@
+accounts/urls.py,6\0\605dfdd3d50bf83b921d6fff90cbd98052a71d27
+L
+static/css/global_styles.css,e\c\ec029dd90e4571adefabe9e90027a390e55e1852
+C
+accounts/signals.py,9\4\9450315f7612a9043073fa95139b026334879f1d
+A
+accounts/forms.py,4\2\423d51d4f9a16166c3e1046d2a92cb79899b60d0
+P
+ accounts/templates/register.html,a\2\a294af43fb66090623f3a7a153a1f3b1ea87827e
+M
+accounts/templates/login.html,4\8\4874f9dab6ad35fc6eeb00680dd50d0f9639275d
+O
+accounts/templates/profile.html,c\8\c8879afd9a110a3d516bc8467629f16498a3e9a1
+A
+accounts/views.py,b\a\ba7590f6f358542018b74d55cb2e357917bab56c

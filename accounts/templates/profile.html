@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% load static %}
+{% load materializecss %}
+{% block content %}
+
+<!-- Header -->
+<div class="parallax-container app-sct-header">
+    <div class="parallax">
+        <img src="{% static 'img/gym-one.jpg' %}">
+    </div>
+    <img class="main-reg-logo" src="{% static 'img/GF_Logo_2c.png' %}" alt="">
+    <div class="app-title-container white-text">
+        <h1>Accounts</h1>
+    </div>
+</div>
+
+<!--Profile Form-->
+<div class="row white-text">
+    <div class="col s12 blue-grey darken-4 center-align">
+        <h3>Profile</h3>
+        <p>Update your information below</p>
+    </div>
+    <div class="col s12 grey darken-4 pt40">
+        <div class="col s10 offset-s1 m8 offset-m2 l6 offset-l3">
+            <div class="row valign-wrapper white-text">
+                <div class="col s5 l4 offset-l1">
+                    <img src="{{ user.profile.image.url }}" alt="" class="circle responsive-img">
+                </div>
+                <div class="col s7">
+                    <h4>{{ user.username }}</h4>
+                    <p>{{ user.email }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col s12 grey darken-4">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="input-field row">
+                {{ u_form.username|materializecss:"s12, icon=fa fa-user" }}
+                {{ u_form.email|materializecss:"s12, icon=fa fa-envelope" }}
+            </div>
+            <div class="input-field row">
+                {{ u_form.first_name|materializecss:"s12 m6, icon=fa fa-user" }}
+                {{ u_form.last_name|materializecss:"s12 m6, icon=person" }}
+            </div>
+            <div class="file-field input-field row">
+                {{ p_form.gender|materializecss:"s6, icon=fa fa-venus-mars" }}
+                <div class="col s6">
+                    <div class="btn">
+                        <span>Upload</span>
+                        <input type="file" name="image" accept="image/*" id="id_image">
+                    </div>
+                    <div class="file-path-wrapper">
+                        <span>Change to: </span><input class="file-path validate" type="text">
+                    </div>
+                </div>
+            </div>
+            <div class="input-field row">
+                {{ p_form.address1|materializecss:"s12 m6, icon=fa fa-road" }}
+                {{ p_form.address2|materializecss:"s12 m6, icon=fa fa-building" }}
+                {{ p_form.city|materializecss:"s12, icon=fa fa-flag" }}
+                {{ p_form.postcode|materializecss:"s12, icon=fa fa-globe" }}
+            </div>
+            <div class="btn-field center-align pt10 pb20">
+                <button type="submit" class="btn-large black-text grey lighten-5">Update</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+{% endblock content %}

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+{% load materializecss %}
+{% block content %}
+
+<!-- Header -->
+<div class="parallax-container app-sct-header">
+    <div class="parallax">
+        <img src="{% static 'img/gym-one.jpg' %}">
+    </div>
+    <img class="main-reg-logo" src="{% static 'img/GF_Logo_2c.png' %}" alt="">
+    <div class="app-title-container white-text">
+        <h1>Accounts</h1>
+    </div>
+</div>
+
+<!--Log In Form-->
+<div class="row white-text">
+    <div class="col s12 blue-grey darken-4 center-align">
+        <h3>Login</h3>
+        <p>Please re-enter your details below</p>
+    </div>
+    <div class="col s12 grey darken-4">
+        <form method="POST">
+            {% csrf_token %}
+            <div class="input-field">
+                {{ form|materializecss }}
+            </div>
+            <div class="btn-field center-align">
+                <button type="submit" class="btn btn-dark">Login</button>
+            </div>
+        </form>
+        <div class="">
+            <p>Need an account? <a class="ml10" href="{% url 'accounts:register' %}">Register Now!</a></p>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

@@ -3,40 +3,20 @@
 {% block content %}
 
 <!-- Header -->
-<div class="parallax-container main-sct-header">
+<div class="parallax-container app-sct-header">
     <div class="parallax">
         <img src="{% static 'img/profile-main-long.jpg' %}">
     </div>
     <img class="main-reg-logo" src="{% static 'img/GF_Logo_2c.png' %}" alt="">
     <div class="main-reg-container ">
-        <div class="pb10"><a class="black-text btn-large grey lighten-5 modal-trigger" href="#modalReg">Login</a>
+        {% if user.is_authenticated %}
+        <div class="pb10"><a class="btn-large disabled">Logged In</a></div>
+        {% else %}
+        <div class="pb10">
+            <a class="black-text btn-large grey lighten-5 modal-trigger" href="#modalReg">Login</a>
         </div>
-        <div><a class="btn-large red darken-1">Sign Up</a></div>
-    </div>
-</div>
-
-<!-- Login *Modal Structure -->
-<div id="modalReg" class="modal white-text">
-    <div class="modal-content blue-grey darken-4 center-align">
-        <h4>LOGIN</h4>
-        <p>Enter email address and password:</p>
-    </div>
-    <div class="divider"></div>
-    <div class="modal-detail grey darken-4">
-        <form class="container pt20 pb20" action="">
-            <div class="input-field">
-                <input id="password" type="password" class="validate">
-                <label for="password">Password</label>
-            </div>
-            <div class="input-field">
-                <input id="email" type="email" class="validate">
-                <label for="email">Email</label>
-            </div>
-            <div class="btn-field center-align pt20 pb20">
-                <a class="mr10 btn-large red darken-1">Na..</a>
-                <a class="btn-large green darken-2">Let's go!</a>
-            </div>
-        </form>
+        {% endif %}
+        <div><a class="btn-large red darken-1" href="{% url 'accounts:register' %}">Sign Up</a></div>
     </div>
 </div>
 
@@ -166,16 +146,16 @@
 </div>
 
 <!-- Blog link -->
-<div class="parallax-container main-sct-posts">
+<div class="parallax-container">
     <div class="parallax">
         <img src="{% static 'img/dumbbells.jpg' %}">
     </div>
-    <div class="main-img-posts">
+    <div class="app-title-container">
         <img class="circle" src="{% static 'img/profile-main-short (2).jpg' %}" alt="">
         <h4 class="center-align white-text">Blogs</h4>
         <div class="pt10 center-align">
             <a class="black-text btn-large grey lighten-5 modal-trigger" href="#modalReg"
-               onclick="M.toast({html: 'Please Login', displayLength: '1500', classes: 'rounded'})">See More</a>
+               onclick="M.toast({html: 'Please Login', displayLength: '1500', classes: 'red rounded'})">See More</a>
         </div>
     </div>
 </div>
@@ -204,10 +184,10 @@
     <div class="parallax">
         <img src="{% static 'img/gym-three.jpg' %}">
     </div>
-    <div class="main-signup">
+    <div class="app-title-container">
         <h3 class="center-align white-text">Join Now</h3>
         <div class="pt10 center-align">
-            <a class="btn-large red darken-1" href="##">Get Started</a>
+            <a class="btn-large red darken-1" href="{% url 'accounts:register' %}">Get Started</a>
         </div>
     </div>
 </div>

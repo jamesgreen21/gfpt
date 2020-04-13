@@ -1,4 +1,6 @@
 {% load static %}
+{% load materializecss %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,37 +8,61 @@
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"/>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+          type="text/css"/>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/global_styles.css' %}" type="text/css"/>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" type="text/css"/>
-    <title>Title</title>
+    <title>{{title}}</title>
 </head>
 
 <body class="black">
 
 <!-- Dropdown Structure -->
 <ul id="dropdown1" class="dropdown-content grey darken-3">
-    <li><a class="white-text modal-trigger" href="#modalReg"><i class="material-icons">play_arrow</i>Login</a></li>
+    {% if user.is_authenticated %}
+    <li><a class="white-text modal-trigger" href="{% url 'accounts:profile' %}"><i class="fa fa-user white-text"></i>Profile</a>
+    </li>
     <li class="divider"></li>
-    <li><a class="white-text" href="#!"><i class="material-icons">fiber_new</i>Register</a></li>
+    <li><a class="white-text" href="{% url 'accounts:logout' %}"><i class="fa fa-arrow-left white-text"></i>Logout</a>
+    </li>
+    {% else %}
+    <li><a class="white-text" href="{% url 'accounts:register' %}"><i
+            class="fa fa-user-plus white-text"></i>Register</a>
+    </li>
+    <li class="divider"></li>
+    {% if nbar == 'home' %}
+    <li><a class="white-text modal-trigger" href="#modalReg"><i class="fa fa-arrow-right white-text"></i>Login</a></li>
+    {% else %}
+    <li><a class="white-text" href="{% url 'accounts:login' %}"><i class="fa fa-arrow-right white-text"></i>Login</a></li>
+    {% endif %}
+    {% endif %}
 </ul>
 
 <!--Navbar-->
 <nav class="z-depth-3">
     <div class="nav-wrapper grey darken-4">
-        <a href="#" class="brand-logo center"><img class="small-logo" src="{% static 'img/logo-2.png' %}" alt=""></a>
+        <a href="{% url 'index' %}" class="brand-logo center"><img class="small-logo"
+                                                                   src="{% static 'img/logo-2.png' %}" alt=""></a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="left hide-on-med-and-down">
-            <li class="grey darken-3"><a href="#">Home</a></li>
-            <li><a class="modal-trigger" href="#modalReg"
-                   onclick="M.toast({html: 'Please Login', displayLength: '1500', classes: 'rounded'})">Blog</a></li>
-            <li><a class="modal-trigger" href="#modalReg"
-                   onclick="M.toast({html: 'Please Login', displayLength: '1500', classes: 'rounded'})">Calculator</a>
+            <li {% if nbar == 'home' %}class="grey darken-3"{% endif %}><a href="{% url 'index' %}">Home</a></li>
+            {% if user.is_authenticated %}
+            <li {% if nbar == 'blog' %}class="grey darken-3"{% endif %}><a href="#">Blog</a></li>
+            <li{% if nbar == 'calc' %}class="grey darken-3"{% endif %}><a href="#">Calculator</a>
             </li>
+            {% else %}
+            <li><a class="modal-trigger" href="#modalReg"
+                   onclick="M.toast({html: 'Please Login', displayLength: '1500', classes: 'red rounded'})">Blog</a>
+            </li>
+            <li><a class="modal-trigger" href="#modalReg"
+                   onclick="M.toast({html: 'Please Login', displayLength: '1500', classes: 'red rounded'})">Calculator</a>
+            </li>
+            {% endif %}
         </ul>
         <ul class="right hide-on-med-and-down">
             <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">
-                Welcome User
+                Welcome {% if user.is_authenticated %}{{ user.username }}{% else %}User{% endif %}
                 <i class="material-icons right">arrow_drop_down</i>
             </a></li>
         </ul>
@@ -45,21 +71,63 @@
 
 <!--Sidenav-->
 <ul class="sidenav grey darken-4" id="mobile-demo">
-    <li><a class="white-text mt10" href="#!"><i class="material-icons white-text">home</i>Home</a></li>
-    <li><a class="white-text mt10 modal-trigger" href="#modalReg"
-           onclick="M.toast({html: 'Please Login', displayLength: '1500', classes: 'rounded'})"><i
-            class="material-icons white-text">chat</i>Blog</a></li>
-    <li><a class="white-text mt10 modal-trigger" href="#modalReg"
-           onclick="M.toast({html: 'Please Login', displayLength: '1500', classes: 'rounded'})"><i
-            class="material-icons white-text">format_list_numbered</i>Calculator</a>
+    <li><a class="white-text mt10" href="{% url 'index' %}"><i class="fa fa-home white-text"></i>Home</a></li>
+    {% if user.is_authenticated %}
+    <li><a class="white-text mt10" href="#!"><i class="fa fa-th-large white-text"></i>Blog</a></li>
+    <li><a class="white-text mt10" href="#!"><i class="fa fa-calculator white-text"></i>Calculator</a></li>
     </li>
     <li>
         <div class="divider mt10 mb10"></div>
     </li>
-    <li><a class="white-text mt10 modal-trigger" href="#modalReg"><i class="material-icons white-text">play_arrow</i>Login</a>
+    <li><a class="white-text mt10 modal-trigger" href="{% url 'accounts:profile' %}">
+        <i class="fa fa-user white-text"></i>{{ user.username }} Profile
+    </a></li>
+    <li><a class="white-text mt10" href="#!">
+        <i class="fa fa-user-plus white-text"></i>Logout
+    </a></li>
+    {% else %}
+    <li><a class="white-text mt10 modal-trigger" href="#modalReg"
+           onclick="M.toast({html: 'Please Login', displayLength: '1500', classes: 'red rounded'})">
+        <i class="fa fa-th-large white-text"></i>Blog</a></li>
+    <li><a class="white-text mt10 modal-trigger" href="#modalReg"
+           onclick="M.toast({html: 'Please Login', displayLength: '1500', classes: 'red rounded'})">
+        <i class="fa fa-calculator white-text"></i>Calculator</a>
     </li>
-    <li><a class="white-text mt10" href="#!"><i class="material-icons white-text">fiber_new</i>Register</a></li>
+    <li>
+        <div class="divider mt10 mb10"></div>
+    </li>
+    <li><a class="white-text mt10 modal-trigger" href="#modalReg">
+        <i class="fa fa-user white-text"></i>Login
+    </a></li>
+    <li><a class="white-text mt10" href="#!">
+        <i class="fa fa-user-plus white-text"></i>Register
+    </a></li>
+    {% endif %}
 </ul>
+
+<!-- Login *Modal Structure -->
+{% if user.is_authenticated == False and nbar == 'home' %}
+<div id="modalReg" class="modal white-text">
+    <div class="modal-content blue-grey darken-4 center-align">
+        <h4>LOGIN</h4>
+        <p>Enter email address and password:</p>
+    </div>
+    <div class="divider"></div>
+    <div class="modal-detail grey darken-4">
+        <form method="POST" class="container pt20 pb20" action="{% url 'index' %}">
+            {% csrf_token %}
+            <div class="input-field">
+                {{ form.username|materializecss:"icon=person" }}
+                {{ form.password|materializecss:"icon=lock" }}
+            </div>
+            <div class="btn-field center-align pt20 pb20">
+                <a href="#!" class="modal-close red darken-1 btn-large mr10">Na..</a>
+                <button type="submit" class="btn-large green darken-2">Let's go!</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endif %}
 
 <!--Block Content-->
 <div class="container pt50">
@@ -125,9 +193,21 @@
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script src="{% static 'js/script.js' %}">
+<script src="{% static 'js/script.js' %}"></script>
+<!-- Alerts *Toasts -->
+{% if messages %}
+{% for message in messages %}
+{% if message.tags == 'success' %}
+<script>M.toast({html: "{{message}}", classes: 'green rounded', displayLength:1500});</script>
+{% elif message.tags == 'info' %}
+<script>M.toast({html: "{{message}}", classes: 'blue rounded', displayLength:1500});</script>
+{% elif message.tags == 'warning' %}
+<script>M.toast({html: "{{message}}", classes: 'orange rounded', displayLength:2500});</script>
+{% elif message.tags == 'error' %}
+<script>M.toast({html: "{{message}}", classes: 'red rounded', displayLength:5000});</script>
+{% endif %}
+{% endfor %}
+{% endif %}
 
-
-</script>
 </body>
 </html>

@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-
 import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -22,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'n5e8jj#a%2df)r8j$n8ut_1#+0nuufblrs!2q*nlt$umraje8l'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # PRODUCTION MODE: False if not in os.environ
 DEBUG = True
@@ -34,6 +33,8 @@ ALLOWED_HOSTS = ['http://127.0.0.1:8000/', '127.0.0.1', 'gfpt.herokuapp.com']
 
 INSTALLED_APPS = [
     'main.apps.MainConfig',
+    'accounts.apps.AccountsConfig',
+    'materializecssform',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -77,11 +78,18 @@ WSGI_APPLICATION = 'gtpt.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-
-DATABASES = {
-    'default': dj_database_url.parse('postgres://ygwznvlxyxfilf:3825e8e677e81ad6a0884d0077399945ee864c08180b314a0aa7536d3efd2844@ec2-46-137-84-140.eu-west-1.compute.amazonaws.com:5432/d15ennam5docr5')
-}
-
+if "DATABASE_URL" in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+else:
+    print("PostgreSQL URL not found, using sqlite instead")
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -115,10 +123,14 @@ USE_L10N = True
 
 USE_TZ = True
 
+LOGIN_REDIRECT_URL = 'index'
+LOGOUT_REDIRECT_URL = 'index'
+LOGOUT_URL = 'index'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+MATERIALIZECSS_ICON_SET = 'fontawesome'
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static"),]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
@@ -127,3 +139,5 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'

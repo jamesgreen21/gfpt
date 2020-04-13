@@ -7,6 +7,8 @@ $(document).ready(function() {
     $('.carousel').carousel();
     $('.modal').modal();
     $('.carousel.carousel-slider').carousel({indicators: true});
+    $('.datepicker').datepicker({'format': 'yyyy-mm-dd'});
+    $('select').formSelect();
   })
 });
 
