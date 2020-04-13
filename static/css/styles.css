@@ -1,6 +1,22 @@
 
 /*----------Navbar----------*/
 
+/*Overwrite Materialize css*/
+nav, nav.nav-wrapper i, nav-wrapper.img,  a.button-collapse, nav a.button-collapse i {
+    min-height: 80px;
+    line-height: 80px;
+}
+
+nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
+    min-height: 80px;
+    line-height: 80px;
+}
+
+nav .button-collapse i {
+    min-height: 80px;
+    line-height: 80px;
+}
+
 nav {
     position: fixed;
     top: 0;
@@ -11,7 +27,7 @@ nav {
 /*----------Footer----------*/
 
 .small-logo {
-    height: 70px;
+    height: 90px;
 }
 
 .social i {
@@ -51,7 +67,7 @@ nav {
     width: 200px;
     position: absolute;
     top: 100px;
-    right: 5%;
+    right: 0;
 }
 
 .main-reg-container {
@@ -91,8 +107,8 @@ nav {
     border-bottom-left-radius: 10px;
 }
 
-.btn-field a {
-    width: 150px;
+.btn-field.a, .btn-field.button {
+    min-width: 120px;
 }
 
 
