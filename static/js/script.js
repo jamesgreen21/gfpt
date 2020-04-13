@@ -19,9 +19,8 @@ $(document).ready(function() {
 
         documentElem.on('scroll', function(){
             var currentScrollTop = $(this).scrollTop();
-            if(currentScrollTop > lastScrollTop) nav.css("top", "-80px");
-            else if (currentScrollTop = lastScrollTop) nav.css("top", "0");
-            else nav.css("top", "0");
+            if (currentScrollTop <= lastScrollTop) nav.css("top", "0");
+            else nav.css("top", "-80px");
             lastScrollTop = currentScrollTop;
         })
     }) ();

@@ -33,13 +33,14 @@
     <img class="main-reg-logo" src="{% static 'img/GF_Logo_2c.png' %}" alt="">
     <div class="main-reg-container ">
         {% if user.is_authenticated %}
-        <div class="pb10"><a class="btn-large disabled">Logged In</a></div>
+        <div class="pb10"><a class="btn-large disabled">{{user.username}}</a></div>
+        <div><a class="btn-large red darken-1" href="{% url 'accounts:logout' %}">Logout</a></div>
         {% else %}
         <div class="pb10">
             <a class="black-text btn-large grey lighten-5 modal-trigger" href="#modalReg">Login</a>
         </div>
+        <div><a class="btn-large red darken-1" href="{% url 'accounts:register' %}">Register</a></div>
         {% endif %}
-        <div><a class="btn-large red darken-1" href="{% url 'accounts:register' %}">Sign Up</a></div>
     </div>
 </div>
 

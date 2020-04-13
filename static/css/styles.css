@@ -20,7 +20,7 @@ nav .button-collapse i {
 nav {
     position: fixed;
     top: 0;
-    transition: top ease-out .5s;
+    transition: top ease-out .3s;
     z-index: 100;
 }
 
