@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+from sorl import thumbnail
+
 
 class Profile(models.Model):
     """
@@ -13,7 +15,7 @@ class Profile(models.Model):
     )
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    image = models.ImageField('Profile Pic', upload_to='accounts_img', default='accounts_img/logo.PNG')
+    image = thumbnail.ImageField('Profile Pic', upload_to='accounts_img', default='accounts_img/logo.PNG')
     gender = models.CharField(
         max_length=30,
         choices=GENDER_CHOICE,
@@ -27,3 +29,9 @@ class Profile(models.Model):
 
     def __str__(self):
         return f'{self.user.username} Profile'
+
+    @property
+    def thumbnail(self):
+        if self.image:
+            return thumbnail.get_thumbnail(self.image, '50x50', quality=90)
+        return None

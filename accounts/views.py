@@ -1,7 +1,9 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
+
+from .models import Profile
 from .forms import (
     UserRegisterForm,
     UserUpdateForm,
@@ -50,6 +52,8 @@ def profile(request):
             instance=request.user.profile
         )
         if u_form.is_valid() and p_form.is_valid():
+            if request.FILES:
+                Profile.objects.get(id=request.user.id).image.delete(save=True)
             u_form.save()
             p_form.save()
             messages.success(request, 'Your profile has been successfully updated.')

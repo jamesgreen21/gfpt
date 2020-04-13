@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% load materializecss %}
+{% load thumbnail %}
 {% block content %}
 
 <!-- Header -->
@@ -15,59 +16,53 @@
 </div>
 
 <!--Profile Form-->
-<div class="row white-text">
+<form class="row white-text" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
     <div class="col s12 blue-grey darken-4 center-align">
         <h3>Profile</h3>
-        <p>Update your information below</p>
+        <p>Welcome back {% if user.first_name %}{{user.first_name}}{% else %}{{user.username}}{% endif %}</p>
     </div>
     <div class="col s12 grey darken-4 pt40">
-        <div class="col s10 offset-s1 m8 offset-m2 l6 offset-l3">
-            <div class="row valign-wrapper white-text">
-                <div class="col s5 l4 offset-l1">
-                    <img src="{{ user.profile.image.url }}" alt="" class="circle responsive-img">
+        <div class="col s12">
+            <div class="avatar-upload">
+                <div class="avatar-edit">
+                    <input type='file' id="id_image" name="image" accept=".png, .jpg, .jpeg"/>
+                    <label class="white-text waves-effect waves-light teal" for="id_image"></label>
                 </div>
-                <div class="col s7">
-                    <h4>{{ user.username }}</h4>
-                    <p>{{ user.email }}</p>
+                <div class="avatar-preview">
+                    <div id="imagePreview" style="background-image: url('{{ user.profile.image.url }}');">
+                    </div>
                 </div>
             </div>
         </div>
+        <div class="col s12 center-align">
+            <h4>{{user.username}}</h4>
+            <h5>{{user.email}}</h5>
+        </div>
     </div>
     <div class="col s12 grey darken-4">
-        <form method="POST" enctype="multipart/form-data">
-            {% csrf_token %}
-            <div class="input-field row">
-                {{ u_form.username|materializecss:"s12, icon=fa fa-user" }}
-                {{ u_form.email|materializecss:"s12, icon=fa fa-envelope" }}
-            </div>
-            <div class="input-field row">
-                {{ u_form.first_name|materializecss:"s12 m6, icon=fa fa-angle-right" }}
-                {{ u_form.last_name|materializecss:"s12 m6, icon=fa fa-angle-right" }}
-            </div>
-            <div class="file-field input-field row">
-                {{ p_form.gender|materializecss:"s12 m6, icon=fa fa-venus-mars" }}
-                <div class="col s12 m6">
-                    <div class="btn waves-effect waves-light red darken-1">
-                        <span>Upload</span>
-                        <input type="file" name="image" accept="image/*" id="id_image">
-                    </div>
-                    <div class="file-path-wrapper">
-                        <span>Change to: </span><input class="file-path validate" type="text">
-                    </div>
-                </div>
-            </div>
-            <div class="input-field row">
-                {{ p_form.address1|materializecss:"s12 m6, icon=fa fa-road" }}
-                {{ p_form.address2|materializecss:"s12 m6, icon=fa fa-building" }}
-                {{ p_form.city|materializecss:"s12, icon=fa fa-flag" }}
-                {{ p_form.postcode|materializecss:"s12, icon=fa fa-globe" }}
-            </div>
-            <div class="btn-field center-align pt10 pb20">
-                <button type="submit" class="btn-large waves-effect waves-light">Update</button>
-            </div>
-        </form>
+        <div class="input-field row">
+            {{ u_form.username|materializecss:"s12, icon=fa fa-user" }}
+            {{ u_form.email|materializecss:"s12, icon=fa fa-envelope" }}
+        </div>
+        <div class="input-field row">
+            {{ u_form.first_name|materializecss:"s12 m6, icon=fa fa-angle-right" }}
+            {{ u_form.last_name|materializecss:"s12 m6, icon=fa fa-angle-right" }}
+        </div>
+        <div class="file-field input-field row">
+            {{ p_form.gender|materializecss:"icon=fa fa-venus-mars" }}
+        </div>
+        <div class="input-field row">
+            {{ p_form.address1|materializecss:"s12 m6, icon=fa fa-road" }}
+            {{ p_form.address2|materializecss:"s12 m6, icon=fa fa-building" }}
+            {{ p_form.city|materializecss:"s12, icon=fa fa-flag" }}
+            {{ p_form.postcode|materializecss:"s12, icon=fa fa-globe" }}
+        </div>
+        <div class="btn-field center-align pt10 pb20">
+            <button type="submit" class="btn-large waves-effect waves-light">Update</button>
+        </div>
     </div>
-</div>
+    </div>
 
 
-{% endblock content %}
+    {% endblock content %}
