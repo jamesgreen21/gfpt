@@ -25,6 +25,10 @@ input {
     border-bottom: solid 1px white;
 }
 
+.b1-white {
+    border: solid 1px white;
+}
+
 /*---------- COLOR ----------*/
 
 label,

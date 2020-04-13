@@ -41,12 +41,12 @@
                 {{ u_form.email|materializecss:"s12, icon=fa fa-envelope" }}
             </div>
             <div class="input-field row">
-                {{ u_form.first_name|materializecss:"s12 m6, icon=fa fa-user" }}
-                {{ u_form.last_name|materializecss:"s12 m6, icon=person" }}
+                {{ u_form.first_name|materializecss:"s12 m6, icon=fa fa-angle-right" }}
+                {{ u_form.last_name|materializecss:"s12 m6, icon=fa fa-angle-right" }}
             </div>
             <div class="file-field input-field row">
-                {{ p_form.gender|materializecss:"s6, icon=fa fa-venus-mars" }}
-                <div class="col s6">
+                {{ p_form.gender|materializecss:"s12 m6, icon=fa fa-venus-mars" }}
+                <div class="col s12 m6">
                     <div class="btn">
                         <span>Upload</span>
                         <input type="file" name="image" accept="image/*" id="id_image">

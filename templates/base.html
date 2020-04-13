@@ -1,5 +1,4 @@
 {% load static %}
-{% load materializecss %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -83,7 +82,7 @@
     <li><a class="white-text mt10 modal-trigger" href="{% url 'accounts:profile' %}">
         <i class="fa fa-user white-text"></i>{{ user.username }} Profile
     </a></li>
-    <li><a class="white-text mt10" href="#!">
+    <li><a class="white-text mt10" href="{% url 'accounts:logout' %}">
         <i class="fa fa-user-plus white-text"></i>Logout
     </a></li>
     {% else %}
@@ -97,38 +96,19 @@
     <li>
         <div class="divider mt10 mb10"></div>
     </li>
-    <li><a class="white-text mt10 modal-trigger" href="#modalReg">
-        <i class="fa fa-user white-text"></i>Login
-    </a></li>
-    <li><a class="white-text mt10" href="#!">
+
+    {% if nbar == 'home' %}
+    <<li><a class="white-text mt10 modal-trigger" href="#modalReg"><i class="fa fa-user white-text"></i>Login</a></li>
+    {% else %}
+    <li><a class="white-text mt10" href="{% url 'accounts:login' %}"><i class="fa fa-user white-text"></i>Login</a></li>
+    {% endif %}
+
+
+    <li><a class="white-text mt10" href="{% url 'accounts:register' %}">
         <i class="fa fa-user-plus white-text"></i>Register
     </a></li>
     {% endif %}
 </ul>
-
-<!-- Login *Modal Structure -->
-{% if user.is_authenticated == False and nbar == 'home' %}
-<div id="modalReg" class="modal white-text">
-    <div class="modal-content blue-grey darken-4 center-align">
-        <h4>LOGIN</h4>
-        <p>Enter email address and password:</p>
-    </div>
-    <div class="divider"></div>
-    <div class="modal-detail grey darken-4">
-        <form method="POST" class="container pt20 pb20" action="{% url 'index' %}">
-            {% csrf_token %}
-            <div class="input-field">
-                {{ form.username|materializecss:"icon=person" }}
-                {{ form.password|materializecss:"icon=lock" }}
-            </div>
-            <div class="btn-field center-align pt20 pb20">
-                <a href="#!" class="modal-close red darken-1 btn-large mr10">Na..</a>
-                <button type="submit" class="btn-large green darken-2">Go!</button>
-            </div>
-        </form>
-    </div>
-</div>
-{% endif %}
 
 <!--Block Content-->
 <div class="container pt50">

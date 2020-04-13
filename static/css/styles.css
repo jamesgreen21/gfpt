@@ -66,13 +66,13 @@ nav {
 .main-reg-logo {
     width: 200px;
     position: absolute;
-    top: 100px;
+    bottom: 0;
     right: 0;
 }
 
 .main-reg-container {
     position: absolute;
-    top: 400px;
+    top: 350px;
     text-align: center;
     width: 100%;
 }
