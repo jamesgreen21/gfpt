@@ -1,96 +1,108 @@
-
 /*----------Navbar----------*/
 
 /*Overwrite Materialize css*/
-nav, nav.nav-wrapper i, nav-wrapper.img,  a.button-collapse, nav a.button-collapse i {
-    min-height: 80px;
-    line-height: 80px;
+nav,
+nav.nav-wrapper i,
+nav-wrapper.img,
+a.button-collapse,
+nav a.button-collapse i {
+  min-height: 80px;
+  line-height: 80px;
 }
 
-nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
-    min-height: 80px;
-    line-height: 80px;
+nav i,
+nav [class^='mdi-'],
+nav [class*='mdi-'],
+nav i.material-icons {
+  min-height: 80px;
+  line-height: 80px;
 }
 
 nav .button-collapse i {
-    min-height: 80px;
-    line-height: 80px;
+  min-height: 80px;
+  line-height: 80px;
 }
 
 nav {
-    position: fixed;
-    top: 0;
-    transition: top ease-out .3s;
-    z-index: 100;
+  position: fixed;
+  top: 0;
+  transition: top ease-out 0.3s;
+  z-index: 100;
 }
 
 .sidenav li a {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .dropdown-content li {
-    height:50px;
+  height: 50px;
 }
 
 .parallax img {
-    filter: brightness(60%);
-    transition: all 0.5s ease-out;
+  filter: brightness(60%);
+  transition: all 0.5s ease-out;
 }
-
 
 /*----------Footer----------*/
 
 .large-logo {
-    width: 250px;
+  width: 250px;
 }
 
 .small-logo {
-    height: 90px;
+  height: 90px;
 }
 
 .social i {
-    font-size: 50px;
+  font-size: 50px;
 }
 
 .social img {
-    width: 180px;
+  width: 180px;
 }
 
 /*----------App Headers----------*/
 
 .app-sct-header {
+  height: 90vh;
+}
+
+@media (min-width: 600px) {
+  .app-sct-header {
     height: 600px;
+  }
 }
 
 .app-title-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
 }
 
-.app-title-container img{
-    height: 200px;
-    width: 200px;
+.app-title-container img {
+  height: 200px;
+  width: 200px;
 }
 
 .app-sct-logo {
-    width: 200px;
-    position: absolute;
-    bottom: 0;
-    right: 0;
+  width: 200px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
 /*----------Buttons----------*/
 
-.btn-field.a, .btn-field.button {
-    min-width: 120px;
+.btn-field.a,
+.btn-field.button {
+  min-width: 120px;
 }
 
 /*----------footer divider----------*/
 
 @media (min-width: 992px) {
-    .social {
-        border-left: solid 1px white;
-    }
+  .social {
+    border-left: solid 1px white;
+  }
 }
