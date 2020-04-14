@@ -1,8 +1,12 @@
 {% extends 'base.html' %}
 {% load materializecss %}
 {% load static %}
-{% block content %}
 
+{% block styles %}
+<link rel="stylesheet" href="{% static 'main/styles.css' %}" type="text/css"/>
+{% endblock styles %}
+
+{% block content %}
 <!-- Login *Modal Structure -->
 <div id="modalReg" class="modal white-text">
     <div class="modal-content blue-grey darken-4 center-align">
@@ -30,7 +34,7 @@
     <div class="parallax">
         <img src="{% static 'img/profile-main-long.jpg' %}">
     </div>
-    <img class="main-reg-logo" src="{% static 'img/GF_Logo_2c.png' %}" alt="">
+    <img class="app-sct-logo" src="{% static 'img/GF_Logo_2c.png' %}" alt="">
     <div class="main-reg-container ">
         {% if user.is_authenticated %}
         <div class="pb10"><a class="btn-large disabled">{{user.username}}</a></div>
@@ -106,7 +110,7 @@
 <!-- Logo -->
 <div class="row black white-text pt30 pb30">
     <div class="col s12 center-align">
-        <img class="main-logo" src="{% static 'img/GF_Logo_2c.png' %}" alt="">
+        <img class="large-logo" src="{% static 'img/GF_Logo_2c.png' %}" alt="">
     </div>
 </div>
 
@@ -221,3 +225,7 @@
 </div>
 
 {% endblock content %}
+
+{% block script %}
+<script src="{% static 'main/script.js' %}"></script>
+{% endblock script %}

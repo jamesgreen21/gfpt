@@ -2,14 +2,18 @@
 {% load static %}
 {% load materializecss %}
 {% load thumbnail %}
-{% block content %}
 
+{% block styles %}
+<link rel="stylesheet" href="{% static 'accounts/styles.css' %}" type="text/css"/>
+{% endblock styles %}
+
+{% block content %}
 <!-- Header -->
 <div class="parallax-container app-sct-header">
     <div class="parallax">
         <img src="{% static 'img/gym-one.jpg' %}">
     </div>
-    <img class="main-reg-logo" src="{% static 'img/GF_Logo_2c.png' %}" alt="">
+    <img class="app-sct-logo" src="{% static 'img/GF_Logo_2c.png' %}" alt="">
     <div class="app-title-container white-text">
         <h1>{{title}}</h1>
     </div>
@@ -68,5 +72,5 @@
 {% endblock content %}
 
 {% block script %}
-<script src="{% static 'js/accounts_script.js' %}"></script>
+<script src="{% static 'accounts/script.js' %}"></script>
 {% endblock script %}

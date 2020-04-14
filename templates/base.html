@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Condensed&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/global_styles.css' %}" type="text/css"/>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" type="text/css"/>
+    {% block styles %}{% endblock %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>{{title}}</title>
 </head>
@@ -46,10 +47,10 @@
                                                                    src="{% static 'img/logo-2.png' %}" alt=""></a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="left hide-on-med-and-down">
-            <li {% if nbar == 'home' %}class="grey darken-3"{% endif %}><a href="{% url 'index' %}">Home</a></li>
+            <li class="{% if nbar == 'home' %}grey darken-3{% endif %}"><a href="{% url 'index' %}">Home</a></li>
             {% if user.is_authenticated %}
-            <li {% if nbar == 'blog' %}class="grey darken-3"{% endif %}><a href="#">Blog</a></li>
-            <li{% if nbar == 'calc' %}class="grey darken-3"{% endif %}><a href="#">Calculator</a>
+            <li class="{% if nbar == 'blog' %}grey darken-3{% endif %}"><a href="#">Blog</a></li>
+            <li class="{% if nbar == 'calc' %}grey darken-3{% endif %}"><a href="#">Calculator</a>
             </li>
             {% else %}
             <li><a class="modal-trigger" href="#modalReg"
@@ -98,7 +99,7 @@
     </li>
 
     {% if nbar == 'home' %}
-    <<li><a class="white-text mt10 modal-trigger" href="#modalReg"><i class="fa fa-user white-text"></i>Login</a></li>
+    <li><a class="white-text mt10 modal-trigger" href="#modalReg"><i class="fa fa-user white-text"></i>Login</a></li>
     {% else %}
     <li><a class="white-text mt10" href="{% url 'accounts:login' %}"><i class="fa fa-user white-text"></i>Login</a></li>
     {% endif %}

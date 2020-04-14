@@ -1,8 +1,4 @@
-var button = $('button');
-var bgRAW = $('.background_RAW');
-var bgFiltered = $('.background_Filtered');
-var phone = $('img');
-
+/*Materializecss*/
 $(document).ready(function() {
   $(function() {
 
@@ -17,6 +13,7 @@ $(document).ready(function() {
   })
 });
 
+/*Navbar scroll top*/
 (function() {
     let documentElem = $(document),
         nav = $('nav'),
@@ -29,19 +26,3 @@ $(document).ready(function() {
         lastScrollTop = currentScrollTop;
     })
 }) ();
-
-
-//anime ({
-//	targets: ['.first', '.last'],
-//	width: '0px',
-//	delay: function(el) {
-//		if (el.classList.contains('first')) {
-//			return 0;
-//		} else {
-//			return 1500;
-//		}
-//	},
-//	duration: 1500,
-//	loop: false,
-//	easing: 'easeInOutQuad'
-//});

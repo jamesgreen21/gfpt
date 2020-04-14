@@ -56,3 +56,5 @@ A
 gfpt/urls.py,d\3\d391aa3fcdc08341355e29056bf938213691e213
 @
 gfpt/settings.py,9\1\91a78ecbf7813df986e400416ba75bfb947a2813
+U
+%accounts/static/js/accounts_script.js,8\6\863034330684c87384800138631593d00460bfbe
