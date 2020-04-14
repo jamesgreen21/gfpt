@@ -24,11 +24,17 @@
 .main-reg-container {
     display: none;
     position: absolute;
-    top: 350px;
+    top: 45vh;
     text-align: center;
     width: 100%;
 }
 
+@media (min-width: 600px) {
+    .main-reg-container {
+        top: 350px;
+    }
+  }
+  
 .main-reg-container a {
     width: 180px;
 }
