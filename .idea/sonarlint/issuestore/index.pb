@@ -5,16 +5,10 @@
 main/admin.py,c\8\c8a19dd4facc67ad6f16f44c62384cab8ed3b0ad
 =
 main/views.py,4\a\4a7418ac0d71420aaad89018b90f29ee93eb761e
-<
-main/urls.py,3\d\3d0eb3ab78d4fd3f5937db7e485b4fd824324640
 C
 templates/base.html,d\a\da7c237b85a69c00a9ab8c189bf63e22070fcac3
 >
 main/models.py,7\c\7c6af494578f3928db475f415f71b7927b0fdc82
-@
-gtpt/settings.py,a\5\a5c1ab7c1b04214a4155ecddbe69378de2ecdca6
-<
-gtpt/urls.py,1\3\13cd001dbb2a0d30eb1783af034ecaa58b6907bd
 N
 main/templates/main/index.html,d\5\d5a3bdf94263059dbd2be9ded6e79a6ac5a82437
 E
@@ -50,3 +44,15 @@ O
 accounts/templates/profile.html,c\8\c8879afd9a110a3d516bc8467629f16498a3e9a1
 A
 accounts/views.py,b\a\ba7590f6f358542018b74d55cb2e357917bab56c
+<
+gfpt/wsgi.py,6\f\6fab93c155874b9443958f842dbc8836e1bec422
+<
+gfpt/asgi.py,c\3\c3eca05a07aba1bcdc546d7325bc2b0cec307f1a
+@
+gfpt/__init__.py,2\d\2da058183966229a6a69efdb8b9345e49751b1ff
+9
+	manage.py,3\1\3156ad13e4d695cd526bbb7b031016ecba842270
+<
+gfpt/urls.py,d\3\d391aa3fcdc08341355e29056bf938213691e213
+@
+gfpt/settings.py,9\1\91a78ecbf7813df986e400416ba75bfb947a2813

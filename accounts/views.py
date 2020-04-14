@@ -32,8 +32,7 @@ def register(request):
         form = UserRegisterForm()
 
     context = {
-        'title': 'Accounts',
-        'nbar': 'accounts',
+        'title': 'Register',
         'form': form,
     }
     return render(request, 'register.html', context)
@@ -64,8 +63,7 @@ def profile(request):
         p_form = ProfileRegisterForm(instance=request.user.profile)
 
     context = {
-        'title': 'Accounts',
-        'nbar': 'accounts',
+        'title': 'Profile',
         'u_form': u_form,
         'p_form': p_form
     }

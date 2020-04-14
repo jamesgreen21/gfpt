@@ -127,6 +127,27 @@ nav {
     }
 }
 
+/*----------Transition page - Profile----------*/
+
+.first, .last {
+	display: block;
+	height: 100vh;
+	position: absolute;
+	top: 0;
+	width: 50%;
+	z-index: 999;
+}
+
+.first {
+	background-color: #4BA4A9;
+	right: 50%;
+}
+
+.last {
+	background-color: #F5F2BC;
+	right: 0;
+}
+
 /*----------jQuery Image Upload from Codepen----------*/
 
 .avatar-upload {
@@ -145,8 +166,8 @@ nav {
 }
 .avatar-upload .avatar-edit input + label {
   display: inline-block;
-  width: 34px;
-  height: 34px;
+  width: 45px;
+  height: 45px;
   margin-bottom: 0;
   border-radius: 100%;
   background: #FFFFFF;
@@ -163,13 +184,15 @@ nav {
 .avatar-upload .avatar-edit input + label:after {
   content: "\f040";
   font-family: 'FontAwesome';
+  font-size: 25px;
   color: #fafafa;
   position: absolute;
-  top: 10px;
+  top: 50%;
   left: 0;
   right: 0;
   text-align: center;
   margin: auto;
+  transform: translateY(-50%);
 }
 .avatar-upload .avatar-preview {
   width: 192px;

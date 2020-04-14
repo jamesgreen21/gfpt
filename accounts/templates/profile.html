@@ -11,7 +11,7 @@
     </div>
     <img class="main-reg-logo" src="{% static 'img/GF_Logo_2c.png' %}" alt="">
     <div class="app-title-container white-text">
-        <h1>Accounts</h1>
+        <h1>{{title}}</h1>
     </div>
 </div>
 
@@ -63,6 +63,10 @@
         </div>
     </div>
     </div>
+</form>
 
+{% endblock content %}
 
-    {% endblock content %}
+{% block script %}
+<script src="{% static 'js/accounts_script.js' %}"></script>
+{% endblock script %}

@@ -22,11 +22,19 @@ input {
 /*---------- BORDER ----------*/
 
 .bb1-white {
-    border-bottom: solid 1px white;
+    border-bottom: solid 2px white;
+}
+
+.bb2-white {
+    border-bottom: inset 4px white;
 }
 
 .b1-white {
-    border: solid 1px white;
+    border: solid 2px white;
+}
+
+.b2-white {
+    border: inset 4px white;
 }
 
 /*---------- COLOR ----------*/

@@ -1,5 +1,11 @@
+var button = $('button');
+var bgRAW = $('.background_RAW');
+var bgFiltered = $('.background_Filtered');
+var phone = $('img');
+
 $(document).ready(function() {
   $(function() {
+
     $('[data-toggle="tooltip"]').tooltip()
     $(".dropdown-trigger").dropdown();
     $('.parallax').parallax();
@@ -11,31 +17,31 @@ $(document).ready(function() {
   })
 });
 
-
 (function() {
-        let documentElem = $(document),
-            nav = $('nav'),
-            lastScrollTop = 0;
+    let documentElem = $(document),
+        nav = $('nav'),
+        lastScrollTop = 0;
 
-        documentElem.on('scroll', function(){
-            var currentScrollTop = $(this).scrollTop();
-            if (currentScrollTop <= lastScrollTop || currentScrollTop < 80) nav.css("top", "0");
-            else nav.css("top", "-80px");
-            lastScrollTop = currentScrollTop;
-        })
-    }) ();
+    documentElem.on('scroll', function(){
+        var currentScrollTop = $(this).scrollTop();
+        if (currentScrollTop <= lastScrollTop || currentScrollTop < 80) nav.css("top", "0");
+        else nav.css("top", "-80px");
+        lastScrollTop = currentScrollTop;
+    })
+}) ();
 
-function readURL(input) {
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
-        reader.onload = function(e) {
-            $('#imagePreview').css('background-image', 'url('+e.target.result +')');
-            $('#imagePreview').hide();
-            $('#imagePreview').fadeIn(650);
-        }
-        reader.readAsDataURL(input.files[0]);
-    }
-}
-$("#id_image").change(function() {
-    readURL(this);
-});
+
+//anime ({
+//	targets: ['.first', '.last'],
+//	width: '0px',
+//	delay: function(el) {
+//		if (el.classList.contains('first')) {
+//			return 0;
+//		} else {
+//			return 1500;
+//		}
+//	},
+//	duration: 1500,
+//	loop: false,
+//	easing: 'easeInOutQuad'
+//});

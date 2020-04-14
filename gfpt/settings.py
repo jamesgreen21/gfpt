@@ -131,6 +131,7 @@ LOGOUT_URL = 'index'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+ANIMEJS_LIB = os.path.join(BASE_DIR, 'node_modules/animejs')
 MATERIALIZECSS_ICON_SET = 'fontawesome'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
@@ -145,6 +146,5 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "static"),]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
-P_MEDIA_ROOT = os.path.join(MEDIA_ROOT, 'accounts_img')
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
