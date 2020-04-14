@@ -32,10 +32,10 @@
 <!-- Header -->
 <div class="parallax-container app-sct-header">
     <div class="parallax">
-        <img src="{% static 'img/profile-main-long.jpg' %}">
+        <img id="animate3" src="{% static 'img/profile-main-long.jpg' %}">
     </div>
-    <img class="app-sct-logo" src="{% static 'img/GF_Logo_2c.png' %}" alt="">
-    <div class="main-reg-container ">
+    <img id="animate2" class="app-sct-logo" src="{% static 'img/GF_Logo_2c.png' %}" alt="">
+    <div id="animate1" class="main-reg-container">
         {% if user.is_authenticated %}
         <div class="pb10"><a class="btn-large disabled">{{user.username}}</a></div>
         <div><a class="btn-large red darken-1" href="{% url 'accounts:logout' %}">Logout</a></div>
@@ -52,12 +52,12 @@
 <div class="row black white-text">
     <div class="col s12 center-align">
         <h2 class="pt20 pb10">Customise your wokouts today</h2>
-        <ul class="red-text">
-            <li><h4>One-on-One</h4></li>
-            <li><h4>Classes</h4></li>
-            <li><h4>Online Training</h4></li>
-            <li><h4>Your place or mine</h4></li>
-        </ul>
+        <div class="red-text">
+            <h4 id="advertMsg1">One-on-One</h4>
+            <h4 id="advertMsg2">Classes</h4>
+            <h4 id="advertMsg3">Online Training</h4>
+            <h4 id="advertMsg4">Your place or mine</h4>
+        </div>
         <ul>
             <li class="pt10 pb10">
                 Lorem ipsum dolor sit amet, sapien etiam, nunc amet dolor ac odio mauris justo.

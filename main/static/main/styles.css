@@ -1,6 +1,28 @@
-/*----------Main App----------*/
+/*----------Header----------*/
+
+#animate3 {
+    animation-name: bright_to_dark;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+}
+
+@keyframes bright_to_dark {
+    0%   {
+        filter: brightness(100%);
+        -webkit-filter: brightness(100%);
+    }
+    35%   {
+        filter: brightness(75%);
+        -webkit-filter: brightness(100%);
+    }
+    100% {
+        filter: brightness(50%);
+        -webkit-filter: brightness(60%);
+    }
+}
 
 .main-reg-container {
+    display: none;
     position: absolute;
     top: 350px;
     text-align: center;
