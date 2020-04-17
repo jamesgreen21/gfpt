@@ -12,6 +12,30 @@ $('#animate2').css('right', -500).animate(
   }
 );
 
+
+$(function () {
+  var messages = [],
+      index = 0;
+
+  messages.push('One-on-One');
+  messages.push('Classes');
+  messages.push('Online Training');
+  messages.push('Your place or mine');
+
+  function cycle() {
+      $('#advertMsg').fadeIn(200).html(messages[index]).delay(1000).fadeOut(300);
+      index++;
+
+      if (index === messages.length) {
+          index = 0;
+      }
+
+      setTimeout(cycle, 2000);
+  }
+
+  cycle();
+});
+
 // $('#advertMsg1')
 
 // function flyPlane() {

@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block styles %}
-<link rel="stylesheet" href="{% static 'main/styles.css' %}" type="text/css"/>
+<link rel="stylesheet" href="{% static 'main/styles.css' %}" type="text/css" />
 {% endblock styles %}
 
 {% block content %}
@@ -51,12 +51,9 @@
 <!-- Customise *Card -->
 <div class="row black white-text">
     <div class="col s12 center-align">
-        <h2 class="pt20 pb10">Customise your wokouts today</h2>
-        <div class="red-text">
-            <h4 id="advertMsg1">One-on-One</h4>
-            <h4 id="advertMsg2">Classes</h4>
-            <h4 id="advertMsg3">Online Training</h4>
-            <h4 id="advertMsg4">Your place or mine</h4>
+        <h2 class="pt20 pb10 red-text">Customise your wokouts today</h2>
+        <div class="advert-container">
+            <h3><span id="advertMsg" class="">One-on-One</span></h3>
         </div>
         <ul>
             <li class="pt10 pb10">
@@ -77,15 +74,33 @@
 <!-- Testimonials *Carousel -->
 {% if testimonials.all %}
 <div class="row">
-    <div class="offset-s2 col s8 offset-l3 l6">
-        <div class="carousel center">
+    <div class="hide-on-small-only col m1 l2">
+        <div class="carousel-btn">
+            <button onclick="$('.carousel').carousel('prev');"
+                class="btn-floating btn-large grey darken-4">
+                <i class="fa fa-chevron-left"></i>
+            </button>
+        </div>
+    </div>
+    <div class="col s12 m10 l8">
+        <div class="carousel carousel-slider center">
             {% for testimonial in testimonials %}
             <div class="carousel-item white black-text" href="#">
                 <img class="carousel-img" src="{{ testimonial.image.url }}">
-                <a class="black-text btn-large grey lighten-5 modal-trigger" href="#modal{{ testimonial.id }}">See
-                    More</a>
+                <a class="btn-floating btn-large waves-effect waves-light red modal-trigger pulse"
+                    href="#modal{{ testimonial.id }}">
+                    <i class="material-icons">comment</i>
+                </a>
             </div>
             {% endfor %}
+        </div>
+    </div>
+    <div class="hide-on-small-only col m1 l2">
+        <div class="carousel-btn">
+            <button onclick="$('.carousel').carousel('next');"
+                class="btn-floating btn-large grey darken-4">
+                <i class="fa fa-chevron-right"></i>
+            </button>
         </div>
     </div>
 </div>
@@ -95,10 +110,10 @@
 {% if testimonials.all %}
 {% for testimonial in testimonials %}
 <div id="modal{{ testimonial.id }}" class="modal center-align white-text bb2-white">
-    <div class="modal-content blue-grey darken-4 bb1-white">
-        <h4>{{ testimonial.title }}</h4>
+    <div class="modal-content black b1-white">
+        <h4 class="red-text">{{ testimonial.title }}</h4>
     </div>
-    <div class="modal-detail grey darken-4 pt10 pb10">
+    <div class="modal-detail black b1-white pt10 pb10">
         <img class="responsive-img pt10" src="{{ testimonial.image.url }}">
         <h5><span class="red-text">Goal: </span>{{ testimonial.goal }}</h5>
         <p>{{ testimonial.content }}</p>
@@ -128,8 +143,8 @@
                 <img class="activator" src="{% static 'img/squats.PNG' %}">
             </div>
             <div class="card-content grey-text text-darken-3">
-            <span class="card-title activator"><i class="material-icons left">person_pin</i>Geoff says<i
-                    class="material-icons right">more_vert</i></span>
+                <span class="card-title activator"><i class="material-icons left">person_pin</i>Geoff says<i
+                        class="material-icons right">more_vert</i></span>
                 <p>If your squat form is shit, not only are you potentially missing out on gains, but you’re likely
                     setting
                     yourself up for potential injury, weakness and imbalances down the line. Here’s some ...
@@ -140,9 +155,8 @@
                 </div>
             </div>
             <div class="card-reveal">
-                <span class="card-title grey-text text-darken-2"><i
-                        class="material-icons left">person_pin</i> geoff_fodenpt<i
-                        class="material-icons right">close</i></span>
+                <span class="card-title grey-text text-darken-2"><i class="material-icons left">person_pin</i>
+                    geoff_fodenpt<i class="material-icons right">close</i></span>
                 <p>Here is some more information about this product that is only revealed once clicked on.</p>
             </div>
         </div>
@@ -156,8 +170,8 @@
                 <img class="activator" src="{% static 'img/mobility.PNG' %}">
             </div>
             <div class="card-content grey-text text-darken-3">
-            <span class="card-title activator"><i class="material-icons left">person_pin</i>Geoff says<i
-                    class="material-icons right">more_vert</i></span>
+                <span class="card-title activator"><i class="material-icons left">person_pin</i>Geoff says<i
+                        class="material-icons right">more_vert</i></span>
                 <p>If your squat form is shit, not only are you potentially missing out on gains, but you’re likely
                     setting
                     yourself up for potential injury, weakness and imbalances down the line. Here’s some ...
@@ -168,9 +182,8 @@
                 </div>
             </div>
             <div class="card-reveal">
-                <span class="card-title grey-text text-darken-2"><i
-                        class="material-icons left">person_pin</i> geoff_fodenpt<i
-                        class="material-icons right">close</i></span>
+                <span class="card-title grey-text text-darken-2"><i class="material-icons left">person_pin</i>
+                    geoff_fodenpt<i class="material-icons right">close</i></span>
                 <p>Here is some more information about this product that is only revealed once clicked on.</p>
             </div>
         </div>
@@ -187,7 +200,7 @@
         <h4 class="center-align white-text">Blogs</h4>
         <div class="pt10 center-align">
             <a class="black-text btn-large grey lighten-5 modal-trigger" href="#modalReg"
-               onclick="M.toast({html: 'Please Login', displayLength: '1500', classes: 'red rounded'})">See More</a>
+                onclick="M.toast({html: 'Please Login', displayLength: '1500', classes: 'red rounded'})">See More</a>
         </div>
     </div>
 </div>
@@ -198,8 +211,8 @@
         <h3 class="pt20 pb20 red-text"">Online Coaching</h3>
         <p>In light of the current fucked up world situation.</p>
         <ul>
-            <li class="pt10 pb10">
-                Why not focus on what you can control ⁣
+            <li class=" pt10 pb10">
+            Why not focus on what you can control ⁣
             </li>
             <li class="pt10 pb10">
                 Do something you wouldn’t have had the time or money for in the past
@@ -207,7 +220,7 @@
             <li class="pt10 pb10">
                 Overcome this negative situation with a positive.
             </li>
-        </ul>
+            </ul>
     </div>
 </div>
 
