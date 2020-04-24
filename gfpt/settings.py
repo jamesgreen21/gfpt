@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['http://127.0.0.1:8000/', '127.0.0.1', 'gfpt.herokuapp.com']
 
 INSTALLED_APPS = [
     'main.apps.MainConfig',
+    'calculator.apps.CalculatorConfig',
     'accounts.apps.AccountsConfig',
     'django.contrib.admin',
     'django.contrib.auth',

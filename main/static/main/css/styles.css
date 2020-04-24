@@ -1,102 +1,200 @@
 /*----------Header----------*/
 
 #animate3 {
-    animation-name: bright_to_dark;
-    animation-duration: 2s;
-    animation-iteration-count: 1;
+  animation-name: bright_to_dark;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
 }
 
 @keyframes bright_to_dark {
-    0% {
-        filter: brightness(100%);
-        -webkit-filter: brightness(100%);
-    }
-    35% {
-        filter: brightness(75%);
-        -webkit-filter: brightness(100%);
-    }
-    100% {
-        filter: brightness(50%);
-        -webkit-filter: brightness(60%);
-    }
+  0% {
+    filter: brightness(100%);
+    -webkit-filter: brightness(100%);
+  }
+  35% {
+    filter: brightness(75%);
+    -webkit-filter: brightness(100%);
+  }
+  100% {
+    filter: brightness(50%);
+    -webkit-filter: brightness(60%);
+  }
 }
 
 .main-reg-container {
-    display: none;
-    position: absolute;
-    top: 45vh;
-    text-align: center;
-    width: 100%;
+  display: none;
+  position: absolute;
+  top: 45vh;
+  text-align: center;
+  width: 100%;
 }
 
 @media (min-width: 600px) {
-    .main-reg-container {
-        top: 350px;
-    }
+  .main-reg-container {
+    top: 350px;
+  }
 }
 
 @media (min-width: 900px) {
-    .main-reg-container {
-        top: 500px;
-    }
+  .main-reg-container {
+    top: 500px;
   }
-
-.main-reg-container a {
-    width: 180px;
 }
 
+.main-reg-container a {
+  width: 180px;
+}
 
 /* ----------Mid Secion---------- */
 
 #advertMsg {
-    opacity: 0;
-    position: relative;
+  opacity: 0;
+  position: relative;
 }
 
-.advert-container, .advert-container #advertMsg {
-    height: 40px;
+.advert-container,
+.advert-container #advertMsg {
+  height: 40px;
 }
 
 .calorie-field h5 {
-    display: inline;
+  display: inline;
 }
 
 .carousel-btn {
-    height: 400px;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
+  height: 400px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .carousel-img {
-    height: 100%;
-    width: auto;
+  height: 100%;
+  width: auto;
 }
 
 .carousel-item a {
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translateX(-50%);
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 /*----------Modal Popups----------*/
 
 .modal {
-    background: transparent;
+  background: transparent;
 }
 
 .modal-content {
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
 }
 
 .modal-detail {
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+/*----------Instagram Card----------*/
+.main-social i {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  font-size: 75px;
+}
+
+.insta-bg {
+  background: rgba(248, 80, 50, 1);
+  background: -moz-linear-gradient(
+    45deg,
+    rgba(248, 80, 50, 1) 0%,
+    rgba(255, 219, 128, 1) 0%,
+    rgba(252, 176, 69, 1) 11%,
+    rgba(247, 119, 55, 1) 22%,
+    rgba(245, 97, 64, 1) 33%,
+    rgba(253, 28, 28, 1) 44%,
+    rgba(225, 48, 107, 1) 55%,
+    rgba(193, 53, 132, 1) 66%,
+    rgba(131, 58, 180, 1) 77%,
+    rgba(88, 81, 219, 1) 88%,
+    rgba(64, 92, 230, 1) 100%
+  );
+  background: -webkit-gradient(
+    left bottom,
+    right top,
+    color-stop(0%, rgba(248, 80, 50, 1)),
+    color-stop(0%, rgba(255, 219, 128, 1)),
+    color-stop(11%, rgba(252, 176, 69, 1)),
+    color-stop(22%, rgba(247, 119, 55, 1)),
+    color-stop(33%, rgba(245, 97, 64, 1)),
+    color-stop(44%, rgba(253, 28, 28, 1)),
+    color-stop(55%, rgba(225, 48, 107, 1)),
+    color-stop(66%, rgba(193, 53, 132, 1)),
+    color-stop(77%, rgba(131, 58, 180, 1)),
+    color-stop(88%, rgba(88, 81, 219, 1)),
+    color-stop(100%, rgba(64, 92, 230, 1))
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    rgba(248, 80, 50, 1) 0%,
+    rgba(255, 219, 128, 1) 0%,
+    rgba(252, 176, 69, 1) 11%,
+    rgba(247, 119, 55, 1) 22%,
+    rgba(245, 97, 64, 1) 33%,
+    rgba(253, 28, 28, 1) 44%,
+    rgba(225, 48, 107, 1) 55%,
+    rgba(193, 53, 132, 1) 66%,
+    rgba(131, 58, 180, 1) 77%,
+    rgba(88, 81, 219, 1) 88%,
+    rgba(64, 92, 230, 1) 100%
+  );
+  background: -o-linear-gradient(
+    45deg,
+    rgba(248, 80, 50, 1) 0%,
+    rgba(255, 219, 128, 1) 0%,
+    rgba(252, 176, 69, 1) 11%,
+    rgba(247, 119, 55, 1) 22%,
+    rgba(245, 97, 64, 1) 33%,
+    rgba(253, 28, 28, 1) 44%,
+    rgba(225, 48, 107, 1) 55%,
+    rgba(193, 53, 132, 1) 66%,
+    rgba(131, 58, 180, 1) 77%,
+    rgba(88, 81, 219, 1) 88%,
+    rgba(64, 92, 230, 1) 100%
+  );
+  background: -ms-linear-gradient(
+    45deg,
+    rgba(248, 80, 50, 1) 0%,
+    rgba(255, 219, 128, 1) 0%,
+    rgba(252, 176, 69, 1) 11%,
+    rgba(247, 119, 55, 1) 22%,
+    rgba(245, 97, 64, 1) 33%,
+    rgba(253, 28, 28, 1) 44%,
+    rgba(225, 48, 107, 1) 55%,
+    rgba(193, 53, 132, 1) 66%,
+    rgba(131, 58, 180, 1) 77%,
+    rgba(88, 81, 219, 1) 88%,
+    rgba(64, 92, 230, 1) 100%
+  );
+  background: linear-gradient(
+    45deg,
+    rgba(248, 80, 50, 1) 0%,
+    rgba(255, 219, 128, 1) 0%,
+    rgba(252, 176, 69, 1) 11%,
+    rgba(247, 119, 55, 1) 22%,
+    rgba(245, 97, 64, 1) 33%,
+    rgba(253, 28, 28, 1) 44%,
+    rgba(225, 48, 107, 1) 55%,
+    rgba(193, 53, 132, 1) 66%,
+    rgba(131, 58, 180, 1) 77%,
+    rgba(88, 81, 219, 1) 88%,
+    rgba(64, 92, 230, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f85032', endColorstr='#405ce6', GradientType=1 );
 }

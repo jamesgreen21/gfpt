@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'calculator/css/styles.css' %}" type="text/css" />
+{% endblock styles %}
+
+{% block content %}
+<!-- Header -->
+<div class="parallax-container calculator-header">
+    <div class="parallax">
+        <img src="{% static 'img/gym-one.jpg' %}">
+    </div>
+    <img class="app-sct-logo" src="{% static 'img/GF_Logo_2c.png' %}" alt="">
+    <div class="app-title-container white-text">
+        <h1>{{title}}</h1>
+    </div>
+</div>
+
+<!-- Calculator *Card Form -->
+<div class="row black white-text">
+    <div class="col s12 offset-m1 m10 offset-l2 l8 center-align">
+        <img class="large-logo" src="{% static 'img/GF_Logo_2c.png' %}" alt="">
+        <p>Harris-Benedict Calculator (Total Daily Energy Expenditure)</p>
+    </div>
+    <div class="divider"></div>
+    <div class="col s12 offset-m1 m10 offset-l2 l8 center-align">
+        <div id="calorieCalculator" class="container">
+            <div class="input-field">
+                <input placeholder="Enter weight" id="weight" type="number" min="0" step="any" class="validate" required>
+                <label for="weight">Weight</label>
+                <!-- <p class="center-align">
+                    <label>
+                        <input name="weight_unit" type="radio" checked />
+                        <span>kilos</span>
+                    </label>
+                    <label>
+                        <input name="weight_unit" type="radio" />
+                        <span>stones</span>
+                    </label>
+                    <label>
+                        <input name="weight_unit" type="radio" />
+                        <span>pounds</span>
+                    </label>
+                </p> -->
+            </div>
+            <div class="input-field">
+                <input placeholder="Enter height" id="height" type="number" min="0" step="any" class="validate" required>
+                <label for="height">Height</label>
+                <!-- <p class="center-align">
+                    <label>
+                        <input name="height_unit" type="radio" checked />
+                        <span>metres</span>
+                    </label>
+                    <label>
+                        <input name="height_unit" type="radio" />
+                        <span>cm</span>
+                    </label>
+                    <label>
+                        <input name="height_unit" type="radio" />
+                        <span>feet</span>
+                    </label>
+                </p> -->
+            </div>
+            <div class="input-field">
+                <input placeholder="Enter age" id="age" min="0" type="number" class="validate" required>
+                <label for="age">Age</label>
+            </div>
+            <div class="input-field">
+                <p><label for="gender">Gender</label></p>
+                <p>
+                    <label>
+                        <input name="gender" type="radio" checked />
+                        <span>Male</span>
+                    </label>
+                    <label>
+                        <input id="gender" name="gender" type="radio" />
+                        <span>Female</span>
+                    </label>
+                </p>
+            </div>
+            <div class="pb10">
+                <label>Physical Activity Level</label>
+                <select id="pal" class="browser-default" required>
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="0">Sedentary</option>
+                    <option value="1">Lightly active</option>
+                    <option value="2">Moderately active</option>
+                    <option value="3">Very active</option>
+                    <option value="4">Extra active</option>
+                </select>
+            </div>
+            <div class="pb10">
+                <label>Goal</label>
+                <select id="goal" class="browser-default" required>
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="0">Lose Weight</option>
+                    <option value="1">Maintain</option>
+                    <option value="2">Gain Size</option>
+                </select>
+            </div>
+            <div class="calorie-field center-align pt40 pb40">
+                <h5 id="calorieOutput" class="card-panel green">2000 Calories</h5>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock content %}
+
+{% block script %}
+<script src="{% static 'calculator/js/script.js' %}"></script>
+{% endblock script %}

@@ -28,20 +28,18 @@ $(function () {
       .html(messages[index])
       .animate(
         {
+          top: 0,
           opacity: 1,
         },
-        150
+        250
       )
-      .delay(1500)
+      .delay(1250)
       .animate(
         {
           top: -10,
           opacity: 0,
         },
-        350,
-        function () {
-          $(this).css({ top: 0 });
-        }
+        500
       );
     index++;
 
@@ -49,7 +47,7 @@ $(function () {
       index = 0;
     }
 
-    setTimeout(cycle, 2000);
+    setTimeout(cycle, 2500);
   }
 
   cycle();

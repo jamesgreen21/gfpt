@@ -29,96 +29,6 @@
     </div>
 </div>
 
-<!-- Calculator *Modal Structure -->
-<div id="modalCalculator" class="modal white-text">
-    <div class="modal-content black center-align">
-        <img class="large-logo" src="{% static 'img/GF_Logo_2c.png' %}" alt="">
-        <p>Harris-Benedict Calculator (Total Daily Energy Expenditure)</p>
-    </div>
-    <div class="divider"></div>
-    <div class="modal-detail grey darken-4 pt20 pb20">
-        <div id="calorieCalculator" class="container">
-            <div class="input-field">
-                <input placeholder="Enter weight" id="weight" type="number" min="0" step="any" class="validate" required>
-                <label for="weight">Weight</label>
-                <!-- <p class="center-align">
-                    <label>
-                        <input name="weight_unit" type="radio" checked />
-                        <span>kilos</span>
-                    </label>
-                    <label>
-                        <input name="weight_unit" type="radio" />
-                        <span>stones</span>
-                    </label>
-                    <label>
-                        <input name="weight_unit" type="radio" />
-                        <span>pounds</span>
-                    </label>
-                </p> -->
-            </div>
-            <div class="input-field">
-                <input placeholder="Enter height" id="height" type="number" min="0" step="any" class="validate" required>
-                <label for="height">Height</label>
-                <!-- <p class="center-align">
-                    <label>
-                        <input name="height_unit" type="radio" checked />
-                        <span>metres</span>
-                    </label>
-                    <label>
-                        <input name="height_unit" type="radio" />
-                        <span>cm</span>
-                    </label>
-                    <label>
-                        <input name="height_unit" type="radio" />
-                        <span>feet</span>
-                    </label>
-                </p> -->
-            </div>
-            <div class="input-field">
-                <input placeholder="Enter age" id="age" min="0" type="number" class="validate" required>
-                <label for="age">Age</label>
-            </div>
-            <div class="input-field">
-                <p><label for="gender">Gender</label></p>
-                <p>
-                    <label>
-                        <input name="gender" type="radio" checked />
-                        <span>Male</span>
-                    </label>
-                    <label>
-                        <input id="gender" name="gender" type="radio" />
-                        <span>Female</span>
-                    </label>
-                </p>
-            </div>
-            <div class="pb10">
-                <label>Physical Activity Level</label>
-                <select id="pal" class="browser-default" required>
-                    <option value="" disabled selected>Select an option</option>
-                    <option value="0">Sedentary</option>
-                    <option value="1">Lightly active</option>
-                    <option value="2">Moderately active</option>
-                    <option value="3">Very active</option>
-                    <option value="4">Extra active</option>
-                </select>
-            </div>
-            <div class="pb10">
-                <label>Goal</label>
-                <select id="goal" class="browser-default" required>
-                    <option value="" disabled selected>Select an option</option>
-                    <option value="0">Lose Weight</option>
-                    <option value="1">Maintain</option>
-                    <option value="2">Gain Size</option>
-                </select>
-            </div>
-            <div class="calorie-field center-align pt40 pb40">
-                <h5 id="calorieOutput" class="card-panel green">2000 Calories</h5>
-            </div>
-        </div>
-    </div>
-</div>
-
-
 <!-- Header -->
 <div class="parallax-container app-sct-header">
     <div class="parallax">
@@ -166,8 +76,9 @@
     <div class="col s12 center-align pt20 pb20">
         <img class="small-logo" src="{% static 'img/logo-2.png' %}" alt="">
         <h4 class="white-text">Free Calorie Calculator</h4>
-        <p class="pt20"><a class="btn-floating btn-large waves-effect waves-light red darken-1 modal-trigger pulse"
-                href="#modalCalculator"><i class="fa fa-calculator"></i></a>
+        <p class="pt20">
+            <a class="btn-floating btn-large waves-effect waves-light red darken-1 pulse"
+                href="{% url 'calc' %}"><i class="fa fa-calculator"></i></a>
         </p>
     </div>
 </div>
@@ -290,17 +201,16 @@
     </div>
 </div>
 
-<!-- Blog link -->
+<!-- Instagram link -->
 <div class="parallax-container">
     <div class="parallax">
         <img src="{% static 'img/dumbbells.jpg' %}">
     </div>
     <div class="app-title-container">
-        <img class="circle" src="{% static 'img/profile-main-short (2).jpg' %}" alt="">
-        <h4 class="center-align white-text">Blogs</h4>
-        <div class="pt10 center-align">
-            <a class="black-text btn-large grey lighten-5 modal-trigger" href="#modalReg"
-                onclick="M.toast({html: 'Please Login', displayLength: '1500', classes: 'red rounded'})">See More</a>
+        <img class="circle instagram-color" src="{% static 'img/profile-insta.png' %}" alt="">
+        <h4 class="center-align white-text">Instagram</h4>
+        <div class="pt10 center-align main-social">
+            <a href="https://www.instagram.com/geoff_fodenpt/" class="white-text pt10 pb10"><i class="fa fa-instagram insta-bg pr5 pl5"></i></a>
         </div>
     </div>
 </div>
@@ -341,5 +251,4 @@
 
 {% block script %}
 <script src="{% static 'main/js/script.js' %}"></script>
-<script src="{% static 'main/js/calculator.js' %}"></script>
 {% endblock script %}

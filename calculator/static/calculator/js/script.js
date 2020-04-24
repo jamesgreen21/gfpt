@@ -37,12 +37,12 @@ document
     var targetEl = document.getElementById('calorieOutput')
 
     if (!result) {
-        targetEl.innerHTML = 'Information Missing';
+        targetEl.innerHTML = 'Waiting';
         targetEl.classList.remove("green");
-        targetEl.classList.add("red");
+        targetEl.classList.add("blue");
     } else {
         targetEl.innerHTML = newUser.daily_target() + ' Calories';
-        targetEl.classList.remove("red");
+        targetEl.classList.remove("blue");
         targetEl.classList.add("green");
     }
   });

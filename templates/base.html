@@ -48,18 +48,9 @@
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="left hide-on-med-and-down">
             <li class="{% if nbar == 'home' %}grey darken-3{% endif %}"><a href="{% url 'index' %}">Home</a></li>
-            {% if user.is_authenticated %}
-            <li class="{% if nbar == 'blog' %}grey darken-3{% endif %}"><a href="#">Blog</a></li>
-            <li class="{% if nbar == 'calc' %}grey darken-3{% endif %}"><a href="#">Calculator</a>
+            <li class="{% if nbar == 'blog' %}grey darken-3{% endif %}"><a target="_blank" href="https://www.instagram.com/geoff_fodenpt/">Instagram</a></li>
+            <li class="{% if nbar == 'calc' %}grey darken-3{% endif %}"><a href="{% url 'calc' %}">Calorie-Calculator</a>
             </li>
-            {% else %}
-            <li><a class="modal-trigger" href="#modalReg"
-                   onclick="M.toast({html: 'Please Login', displayLength: '1500', classes: 'red rounded'})">Blog</a>
-            </li>
-            <li><a class="modal-trigger" href="#modalReg"
-                   onclick="M.toast({html: 'Please Login', displayLength: '1500', classes: 'red rounded'})">Calculator</a>
-            </li>
-            {% endif %}
         </ul>
         <ul class="right hide-on-med-and-down">
             <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">
@@ -74,8 +65,8 @@
 <ul class="sidenav grey darken-4" id="mobile-demo">
     <li><a class="white-text mt10" href="{% url 'index' %}"><i class="fa fa-home white-text"></i>Home</a></li>
     {% if user.is_authenticated %}
-    <li><a class="white-text mt10" href="#!"><i class="fa fa-th-large white-text"></i>Blog</a></li>
-    <li><a class="white-text mt10" href="#!"><i class="fa fa-calculator white-text"></i>Calculator</a></li>
+    <li><a class="white-text mt10" target="_blank" href="https://www.instagram.com/geoff_fodenpt/"><i class="fa fa-th-large white-text"></i>Instagram</a></li>
+    <li><a class="white-text mt10" href="{% url 'calc' %}"><i class="fa fa-calculator white-text"></i>Calorie-Calculator</a></li>
     </li>
     <li>
         <div class="divider mt10 mb10"></div>
@@ -87,13 +78,8 @@
         <i class="fa fa-user-plus white-text"></i>Logout
     </a></li>
     {% else %}
-    <li><a class="white-text mt10 modal-trigger" href="#modalReg"
-           onclick="M.toast({html: 'Please Login', displayLength: '1500', classes: 'red rounded'})">
-        <i class="fa fa-th-large white-text"></i>Blog</a></li>
-    <li><a class="white-text mt10 modal-trigger" href="#modalReg"
-           onclick="M.toast({html: 'Please Login', displayLength: '1500', classes: 'red rounded'})">
-        <i class="fa fa-calculator white-text"></i>Calculator</a>
-    </li>
+    <li><a class="white-text mt10" target="_blank" href="https://www.instagram.com/geoff_fodenpt/"><i class="fa fa-th-large white-text"></i>Instagram</a></li>
+    <li><a class="white-text mt10" href="{% url 'calc' %}"><i class="fa fa-calculator white-text"></i>Calorie-Calculator</a></li>
     <li>
         <div class="divider mt10 mb10"></div>
     </li>
