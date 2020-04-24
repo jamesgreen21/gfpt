@@ -1,8 +1,12 @@
 {% extends "base.html" %}
 {% load static %}
 {% load materializecss %}
-{% block content %}
 
+{% block styles %}
+<link rel="stylesheet" href="{% static 'accounts/css/styles.css' %}" type="text/css"/>
+{% endblock styles %}
+
+{% block content %}
 <!-- Header -->
 <div class="parallax-container app-sct-header">
     <div class="parallax">
@@ -37,3 +41,7 @@
 </div>
 
 {% endblock content %}
+
+{% block script %}
+<script src="{% static 'accounts/js/script.js' %}"></script>
+{% endblock script %}

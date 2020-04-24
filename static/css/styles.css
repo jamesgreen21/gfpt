@@ -64,12 +64,18 @@ nav {
 /*----------App Headers----------*/
 
 .app-sct-header {
-  height: 80vh;
+  height: 78vh;
 }
 
 @media (min-width: 600px) {
   .app-sct-header {
     height: 600px;
+  }
+}
+
+@media (min-width: 900px) {
+  .app-sct-header {
+    height: 800px;
   }
 }
 
