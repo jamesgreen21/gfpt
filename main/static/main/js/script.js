@@ -14,41 +14,39 @@ $('#animate2')
     }
   );
 
-$(function () {
-  var messages = [],
-    index = 0;
+// $(function () {
+//   var messages = [],
+//     index = 0;
 
-  messages.push('One-on-One');
-  messages.push('Classes');
-  messages.push('Online Training');
-  messages.push('Your place or mine');
+//   messages.push('One-on-One');
+//   messages.push('Classes');
+//   messages.push('Online Training');
+//   messages.push('Your place or mine');
 
-  function cycle() {
-    $('#advertMsg')
-      .html(messages[index])
-      .animate(
-        {
-          top: 0,
-          opacity: 1,
-        },
-        250
-      )
-      .delay(1250)
-      .animate(
-        {
-          top: -10,
-          opacity: 0,
-        },
-        500
-      );
-    index++;
+//   function cycle() {
+//     $('#advertMsg')
+//       .html(messages[index])
+//       .animate(
+//         {
+//           top: 0,
+//           opacity: 1,
+//         },
+//         250
+//       )
+//       .delay(1250)
+//       .animate(
+//         {
+//           top: -10,
+//           opacity: 0,
+//         },
+//         500
+//       );
+//     index++;
 
-    if (index === messages.length) {
-      index = 0;
-    }
-
-    setTimeout(cycle, 2500);
-  }
-
-  cycle();
-});
+//     if (index === messages.length) {
+//       index = 0;
+//     }
+//     cycle();
+//   }
+//   cycle();
+// });

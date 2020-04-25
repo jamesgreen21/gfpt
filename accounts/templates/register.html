@@ -20,9 +20,9 @@
 
 <!--Register Form-->
 <div class="row white-text">
-    <div class="col s12 blue-grey darken-4 center-align">
+    <div class="col s12 black center-align">
         <h3>Register</h3>
-        <p>Please fill out all fields below</p>
+        <p class="center-align">Please fill out all fields below</p>
     </div>
     <div class="col s12 grey darken-4">
         <form method="POST" enctype="multipart/form-data" action="{% url 'accounts:register' %}">
@@ -31,11 +31,11 @@
                 {{ form|materializecss }}
             </div>
             <div class="btn-field center-align">
-                <button type="submit" class="btn waves-effect waves-light btn-large">Register</button>
+                <button type="submit" class="btn green darken-2 waves-effect waves-light btn-large">Register</button>
             </div>
         </form>
         <div class="">
-            <p>Already have an account? <a class="red-text" href="{% url 'accounts:login' %}">Login</a></p>
+            <p class="center-align">Already have an account? <a class="red-text darken-1" href="{% url 'accounts:login' %}">Login</a></p>
         </div>
     </div>
 </div>

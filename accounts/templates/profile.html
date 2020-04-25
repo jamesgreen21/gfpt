@@ -4,7 +4,7 @@
 {% load thumbnail %}
 
 {% block styles %}
-<link rel="stylesheet" href="{% static 'accounts/css/styles.css' %}" type="text/css"/>
+<link rel="stylesheet" href="{% static 'accounts/css/styles.css' %}" type="text/css" />
 {% endblock styles %}
 
 {% block content %}
@@ -22,20 +22,15 @@
 <!--Profile Form-->
 <form class="row white-text" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
-    <div class="col s12 blue-grey darken-4 center-align">
-        <h3>Profile</h3>
-        <p>Welcome back {% if user.first_name %}{{user.first_name}}{% else %}{{user.username}}{% endif %}</p>
-    </div>
-    <div class="col s12 grey darken-4 pt40">
-        <div class="col s12">
-            <div class="avatar-upload">
-                <div class="avatar-edit">
-                    <input type='file' id="id_image" name="image" accept=".png, .jpg, .jpeg"/>
-                    <label class="white-text waves-effect waves-light teal" for="id_image"></label>
-                </div>
-                <div class="avatar-preview">
-                    <div id="imagePreview" style="background-image: url('{{ user.profile.image.url }}');">
-                    </div>
+    <div class="col s12 black pt20 pb20">
+        <p class="center-align">Welcome back {% if user.first_name %}{{user.first_name}}{% else %}{{user.username}}{% endif %}</p>
+        <div class="avatar-upload">
+            <div class="avatar-edit">
+                <input type='file' id="id_image" name="image" accept=".png, .jpg, .jpeg" />
+                <label class="white-text waves-effect waves-light teal" for="id_image"></label>
+            </div>
+            <div class="avatar-preview">
+                <div id="imagePreview" style="background-image: url('{{ user.profile.image.url }}');">
                 </div>
             </div>
         </div>
@@ -63,7 +58,7 @@
             {{ p_form.postcode|materializecss:"s12, icon=fa fa-globe" }}
         </div>
         <div class="btn-field center-align pt10 pb20">
-            <button type="submit" class="btn-large waves-effect waves-light">Update</button>
+            <button type="submit" class="btn-large green darken-2 waves-effect waves-light">Update</button>
         </div>
     </div>
     </div>

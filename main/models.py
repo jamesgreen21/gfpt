@@ -11,7 +11,7 @@ class Testimonials(models.Model):
 
     title = models.CharField(max_length=50)
     goal = models.CharField(max_length=50, choices=TRAINING_OPTIONS)
-    content = models.CharField(max_length=250)
+    content = models.TextField()
     pub_date = models.DateTimeField('date published', auto_now_add=True)
     image = models.ImageField(upload_to='main_img')
 

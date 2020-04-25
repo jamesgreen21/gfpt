@@ -54,6 +54,9 @@ nav {
 }
 
 .social i {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
   font-size: 50px;
 }
 
@@ -64,24 +67,13 @@ nav {
 /*----------App Headers----------*/
 
 .app-sct-header {
-  height: 78vh;
-}
-
-@media (min-width: 600px) {
-  .app-sct-header {
-    height: 600px;
-  }
-}
-
-@media (min-width: 900px) {
-  .app-sct-header {
-    height: 800px;
-  }
+  height: 400px;
 }
 
 .app-title-container {
+  font-weight: bold;
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
 }
@@ -89,6 +81,21 @@ nav {
 .app-title-container img {
   height: 200px;
   width: 200px;
+}
+
+@media (min-width: 600px) {
+  .app-sct-header {
+    height: 500px;
+  }
+}
+
+@media (min-width: 900px) {
+  .app-sct-header {
+    height: 600px;
+  }
+  .app-title-container {
+    top: 50%;
+  }
 }
 
 .app-sct-logo {
@@ -111,4 +118,110 @@ nav {
   .social {
     border-left: solid 1px white;
   }
+}
+
+
+/*----------Socials----------*/
+.insta-bg {
+  background: rgba(248, 80, 50, 1);
+  background: -moz-linear-gradient(
+    45deg,
+    rgba(248, 80, 50, 1) 0%,
+    rgba(255, 219, 128, 1) 0%,
+    rgba(252, 176, 69, 1) 11%,
+    rgba(247, 119, 55, 1) 22%,
+    rgba(245, 97, 64, 1) 33%,
+    rgba(253, 28, 28, 1) 44%,
+    rgba(225, 48, 107, 1) 55%,
+    rgba(193, 53, 132, 1) 66%,
+    rgba(131, 58, 180, 1) 77%,
+    rgba(88, 81, 219, 1) 88%,
+    rgba(64, 92, 230, 1) 100%
+  );
+  background: -webkit-gradient(
+    left bottom,
+    right top,
+    color-stop(0%, rgba(248, 80, 50, 1)),
+    color-stop(0%, rgba(255, 219, 128, 1)),
+    color-stop(11%, rgba(252, 176, 69, 1)),
+    color-stop(22%, rgba(247, 119, 55, 1)),
+    color-stop(33%, rgba(245, 97, 64, 1)),
+    color-stop(44%, rgba(253, 28, 28, 1)),
+    color-stop(55%, rgba(225, 48, 107, 1)),
+    color-stop(66%, rgba(193, 53, 132, 1)),
+    color-stop(77%, rgba(131, 58, 180, 1)),
+    color-stop(88%, rgba(88, 81, 219, 1)),
+    color-stop(100%, rgba(64, 92, 230, 1))
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    rgba(248, 80, 50, 1) 0%,
+    rgba(255, 219, 128, 1) 0%,
+    rgba(252, 176, 69, 1) 11%,
+    rgba(247, 119, 55, 1) 22%,
+    rgba(245, 97, 64, 1) 33%,
+    rgba(253, 28, 28, 1) 44%,
+    rgba(225, 48, 107, 1) 55%,
+    rgba(193, 53, 132, 1) 66%,
+    rgba(131, 58, 180, 1) 77%,
+    rgba(88, 81, 219, 1) 88%,
+    rgba(64, 92, 230, 1) 100%
+  );
+  background: -o-linear-gradient(
+    45deg,
+    rgba(248, 80, 50, 1) 0%,
+    rgba(255, 219, 128, 1) 0%,
+    rgba(252, 176, 69, 1) 11%,
+    rgba(247, 119, 55, 1) 22%,
+    rgba(245, 97, 64, 1) 33%,
+    rgba(253, 28, 28, 1) 44%,
+    rgba(225, 48, 107, 1) 55%,
+    rgba(193, 53, 132, 1) 66%,
+    rgba(131, 58, 180, 1) 77%,
+    rgba(88, 81, 219, 1) 88%,
+    rgba(64, 92, 230, 1) 100%
+  );
+  background: -ms-linear-gradient(
+    45deg,
+    rgba(248, 80, 50, 1) 0%,
+    rgba(255, 219, 128, 1) 0%,
+    rgba(252, 176, 69, 1) 11%,
+    rgba(247, 119, 55, 1) 22%,
+    rgba(245, 97, 64, 1) 33%,
+    rgba(253, 28, 28, 1) 44%,
+    rgba(225, 48, 107, 1) 55%,
+    rgba(193, 53, 132, 1) 66%,
+    rgba(131, 58, 180, 1) 77%,
+    rgba(88, 81, 219, 1) 88%,
+    rgba(64, 92, 230, 1) 100%
+  );
+  background: linear-gradient(
+    45deg,
+    rgba(248, 80, 50, 1) 0%,
+    rgba(255, 219, 128, 1) 0%,
+    rgba(252, 176, 69, 1) 11%,
+    rgba(247, 119, 55, 1) 22%,
+    rgba(245, 97, 64, 1) 33%,
+    rgba(253, 28, 28, 1) 44%,
+    rgba(225, 48, 107, 1) 55%,
+    rgba(193, 53, 132, 1) 66%,
+    rgba(131, 58, 180, 1) 77%,
+    rgba(88, 81, 219, 1) 88%,
+    rgba(64, 92, 230, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f85032', endColorstr='#405ce6', GradientType=1 );
+}
+
+.facebook-bg {
+  color: #3b5998;
+}
+
+.youtube-bg {
+  padding: 3px;
+  background-color: #c4302b;
+}
+
+.twitter-bg {
+  padding: 1px;
+  background-color: #1DA1F2;
 }

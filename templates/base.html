@@ -49,7 +49,7 @@
         <ul class="left hide-on-med-and-down">
             <li class="{% if nbar == 'home' %}grey darken-3{% endif %}"><a href="{% url 'index' %}">Home</a></li>
             <li class="{% if nbar == 'blog' %}grey darken-3{% endif %}"><a target="_blank" href="https://www.instagram.com/geoff_fodenpt/">Instagram</a></li>
-            <li class="{% if nbar == 'calc' %}grey darken-3{% endif %}"><a href="{% url 'calc' %}">Calorie-Calculator</a>
+            <li class="{% if nbar == 'calc' %}grey darken-3{% endif %}"><a href="{% url 'calc' %}">Calorie Calculator</a>
             </li>
         </ul>
         <ul class="right hide-on-med-and-down">
@@ -66,11 +66,8 @@
     <li><a class="white-text mt10" href="{% url 'index' %}"><i class="fa fa-home white-text"></i>Home</a></li>
     {% if user.is_authenticated %}
     <li><a class="white-text mt10" target="_blank" href="https://www.instagram.com/geoff_fodenpt/"><i class="fa fa-th-large white-text"></i>Instagram</a></li>
-    <li><a class="white-text mt10" href="{% url 'calc' %}"><i class="fa fa-calculator white-text"></i>Calorie-Calculator</a></li>
-    </li>
-    <li>
-        <div class="divider mt10 mb10"></div>
-    </li>
+    <li><a class="white-text mt10" href="{% url 'calc' %}"><i class="fa fa-calculator white-text"></i>Calorie Calculator</a></li>
+    <li><div class="divider mt10 mb10"></div></li>
     <li><a class="white-text mt10 modal-trigger" href="{% url 'accounts:profile' %}">
         <i class="fa fa-user white-text"></i>{{ user.username }} Profile
     </a></li>
@@ -79,7 +76,7 @@
     </a></li>
     {% else %}
     <li><a class="white-text mt10" target="_blank" href="https://www.instagram.com/geoff_fodenpt/"><i class="fa fa-th-large white-text"></i>Instagram</a></li>
-    <li><a class="white-text mt10" href="{% url 'calc' %}"><i class="fa fa-calculator white-text"></i>Calorie-Calculator</a></li>
+    <li><a class="white-text mt10" href="{% url 'calc' %}"><i class="fa fa-calculator white-text"></i>Calorie Calculator</a></li>
     <li>
         <div class="divider mt10 mb10"></div>
     </li>
@@ -103,13 +100,13 @@
 </div>
 
 <!--Footer Content-->
-<footer class="page-footer p0">
+<footer class="page-footer black p0">
     <div class="grey darken-4">
         <div class="pt20 pb20 center-align">
             <img class="small-logo" src="{% static 'img/logo-2.png' %}" alt="">
         </div>
     </div>
-    <div class="blue-grey darken-4 pt20 pb20">
+    <div class="black pt20 pb20">
         <div class="container">
             <div class="row">
                 <div class="col l5 s12 center-align">
@@ -125,24 +122,25 @@
                         </div>
                     </form>
                 </div>
-                <div class="col s12 hide-on-large-only">
-                    <div class="social pt50 center-align">
-                        <a href="#" class="white-text pr10 pl10"><i class="fa fa-facebook-square"></i></a>
-                        <a href="#" class="white-text pr10 pl10"><i class="fa fa-instagram"></i></a>
-                        <a href="#" class="white-text pr10 pl10"><i class="fa fa-youtube-square"></i></a>
-                        <a href="#" class="white-text pr10 pl10"><i class="fa fa-twitter-square"></i></a>
+                <div class="col s12 col l6 offset-l1 center-align social">
+                    <div class="pt40">
+                        <p>Jump to any of my socials below</p>
                     </div>
-                </div>
-                <div class="col l6 offset-l1 hide-on-med-and-down center-align social">
-                    <div class="pt20 pb10">
-                        <a href="#" class="white-text pr10"><i class="fa fa-facebook-square"></i></a>
-                        <a href="#" class="white-text pl10"><i class="fa fa-instagram"></i></a>
+                    <div class="pt20 pb20">
+                        <a href="https://www.facebook.com/geofffodenpt" class="pr10 pl10" target=”_blank”>
+                            <i class="fa fa-facebook facebook-bg"></i>
+                        </a>
+                        <a href="https://www.instagram.com/geoff_fodenpt/" class="white-text pr10 pl10" target=”_blank”>
+                            <i class="fa fa-instagram insta-bg pr5 pl5"></i>
+                        </a>
+                        <a href="#" class="white-text pr10 pl10" target=”_blank”>
+                            <i class="fa fa-twitter twitter-bg"></i>
+                        </a>
+                        <a href="https://www.youtube.com/user/geoff86" class="white-text pr10 pl10" target=”_blank”>
+                            <i class="fa fa-youtube red pt3"></i>
+                        </a>
                     </div>
-                    <div class="pt10 pb10">
-                        <a href="#" class="white-text pr10"><i class="fa fa-youtube-square"></i></a>
-                        <a href="#" class="white-text pl10"><i class="fa fa-twitter-square"></i></a>
-                    </div>
-                    <div class="pt10 pb10">
+                    <div class="pt40 pb20">
                         <img src="{% static 'img/GF_Logo_2c.png' %}" alt="">
                     </div>
                 </div>

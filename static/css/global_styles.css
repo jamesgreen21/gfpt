@@ -53,8 +53,20 @@ input {
 	padding: 0!important
 }
 
+.p5 {
+	padding: 5px !important
+}
+
+.p10 {
+	padding: 10px !important
+}
+
 
 /* Padding Top */
+
+.pt3 {
+	padding-top: 3px!important
+}
 
 .pt10 {
 	padding-top: 10px!important
@@ -303,7 +315,9 @@ input {
 	margin: auto;
 	float: none;
 }
-
+.m0 {
+	margin: 0!important
+}
 
 /* Margin Top */
 

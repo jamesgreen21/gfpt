@@ -4,7 +4,7 @@ from django.shortcuts import render
 def index(request):
 
     context = {
-        'title': 'Calorie-Calculator',
+        'title': 'Calorie Calculator',
         'nbar': 'calc',
     }
 

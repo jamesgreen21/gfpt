@@ -9,11 +9,10 @@
 {% block content %}
 <!-- Login *Modal Structure -->
 <div id="modalReg" class="modal white-text">
-    <div class="modal-content blue-grey darken-4 center-align">
-        <h4>LOGIN</h4>
-        <p>Enter email address and password:</p>
+    <div class="modal-content black center-align">
+        <img class="large-logo" src="{% static 'img/GF_Logo_2c.png' %}" alt="">
+        <h4>Login</h4>
     </div>
-    <div class="divider"></div>
     <div class="modal-detail grey darken-4">
         <form method="POST" class="container pt20 pb20" action="{% url 'index' %}">
             {% csrf_token %}
@@ -52,21 +51,31 @@
 <div class="row black white-text">
     <div class="col s12 center-align">
         <h3 class="pt20 pb10 red-text">Customise your wokouts today</h3>
-        <div class="advert-container">
-            <h4><span id="advertMsg">One-on-One</span></h4>
+        <div class="advert-container center-align">
+            <h4 class="advert-msg w1 m0">One-on-One</h4>
+            <h4 class="advert-msg w2 m0">Classes</h4>
+            <h4 class="advert-msg w3 m0">Online Training</h4>
+            <h4 class="advert-msg w4 m0">Your place or mine</h4>
         </div>
         <ul>
             <li class="pt10 pb10">
-                Lorem ipsum dolor sit amet, sapien etiam, nunc amet dolor ac odio mauris justo.
+                My name is Geoff Foden and I firstly wanted to say thanks for
+                considering me as a personal trainer.
+
             </li>
             <li class="pt10 pb10">
-                Luctus arcu, urna praesent at id quisque ac. Arcu es massa vestibulum malesuada, integer vivamus elit eu
-                mauris eus, cum eros quis aliquam wisi.
+                I know where you’ve been. Spent time on yourself and not seen
+                the changes you want. Sick and tired of making excuses and
+                want to see real change. I can help
             </li>
             <li class="pt10 pb10">
-                Nulla wisi laoreet suspendisse integer vivamus elit eu mauris hendrerit facilisi, mi mattis pariatur
-                aliquam pharetra eget.
+                When you sign on as a client with me you aren’t just getting a
+                pre-packaged program and being sent on your way. You get a
+                kick up the butt, you get help and support and most importantly,
+                you get success.
+
             </li>
+            <li class="pt10 pb10">I’m looking forward to working with you</li>
         </ul>
     </div>
 </div>
@@ -77,8 +86,8 @@
         <img class="small-logo" src="{% static 'img/logo-2.png' %}" alt="">
         <h4 class="white-text">Free Calorie Calculator</h4>
         <p class="pt20">
-            <a class="btn-floating btn-large waves-effect waves-light red darken-1 pulse"
-                href="{% url 'calc' %}"><i class="fa fa-calculator"></i></a>
+            <a class="btn-floating btn-large waves-effect waves-light red darken-1 pulse" href="{% url 'calc' %}"><i
+                    class="fa fa-calculator"></i></a>
         </p>
     </div>
 </div>
@@ -87,14 +96,14 @@
 {% if testimonials.all %}
 <div class="row pt20">
     <h3 class="white-text center-align">Testimonials</h3>
-    <div class="hide-on-small-only col m1 l2">
+    <div class="hide-on-small-only col m1">
         <div class="carousel-btn">
-            <button onclick="$('.carousel').carousel('prev');" class="btn-floating btn-large grey darken-4">
+            <button onclick="$('.carousel').carousel('prev');" class="btn-floating btn grey darken-4">
                 <i class="fa fa-chevron-left"></i>
             </button>
         </div>
     </div>
-    <div class="col s12 m10 l8">
+    <div class="col s12 m10">
         <div class="carousel carousel-slider center">
             {% for testimonial in testimonials %}
             <div class="carousel-item white black-text" href="#">
@@ -107,9 +116,9 @@
             {% endfor %}
         </div>
     </div>
-    <div class="hide-on-small-only col m1 l2">
+    <div class="hide-on-small-only col m1">
         <div class="carousel-btn">
-            <button onclick="$('.carousel').carousel('next');" class="btn-floating btn-large grey darken-4">
+            <button onclick="$('.carousel').carousel('next');" class="btn-floating btn grey darken-4">
                 <i class="fa fa-chevron-right"></i>
             </button>
         </div>
@@ -120,14 +129,20 @@
 <!-- Testimonial *Modal Structure -->
 {% if testimonials.all %}
 {% for testimonial in testimonials %}
-<div id="modal{{ testimonial.id }}" class="modal center-align white-text bb2-white">
-    <div class="modal-content black b1-white">
-        <h4 class="red-text">{{ testimonial.title }}</h4>
-    </div>
-    <div class="modal-detail black b1-white pt10 pb10">
+<div id="modal{{ testimonial.id }}" class="modal center-align white-text">
+    <div class="modal-content black">
+        <div class="modelScroll">
+            <h6>Scroll</h6>
+            <i class="fa fa-chevron-down"></i>
+        </div>
         <img class="responsive-img pt10" src="{{ testimonial.image.url }}">
+    </div>
+    <div class="modal-detail grey darken-4 p5">
+        <h4>{{ testimonial.title }}</h4>
         <h5><span class="red-text">Goal: </span>{{ testimonial.goal }}</h5>
-        <p>{{ testimonial.content }}</p>
+        <div class="left-align p5">
+            <p>{{ testimonial.content|linebreaks }}</p>
+        </div>
     </div>
 </div>
 {% endfor %}
@@ -207,10 +222,14 @@
         <img src="{% static 'img/dumbbells.jpg' %}">
     </div>
     <div class="app-title-container">
-        <img class="circle instagram-color" src="{% static 'img/profile-insta.png' %}" alt="">
+        <a href="https://www.instagram.com/geoff_fodenpt/" target=”_blank”>
+            <img class="circle instagram-color" src="{% static 'img/profile-insta.png' %}" alt="">
+        </a>
         <h4 class="center-align white-text">Instagram</h4>
         <div class="pt10 center-align main-social">
-            <a href="https://www.instagram.com/geoff_fodenpt/" class="white-text pt10 pb10"><i class="fa fa-instagram insta-bg pr5 pl5"></i></a>
+            <a href="https://www.instagram.com/geoff_fodenpt/" class="white-text pt10 pb10" target=”_blank”>
+                <i class="fa fa-instagram insta-bg pr5 pl5"></i>
+            </a>
         </div>
     </div>
 </div>
@@ -218,24 +237,21 @@
 <!-- Advert *Card -->
 <div class="row black white-text">
     <div class="col s12 center-align">
-        <h3 class="pt20 pb20 red-text"">Online Coaching</h3>
-        <p>In light of the current fucked up world situation.</p>
+        <h3 class="pt20 pb20 red-text">Benefits</h3>
         <ul>
-            <li class=" pt10 pb10">
-            Why not focus on what you can control ⁣
+            <li class=" pt10 pb10">No yearly contracts or sign-up fees</li>
+            <li class=" pt10 pb10">No time slots for training, you train when and where you need too</li>
+            <li class=" pt10 pb10">No worries - fool proof optimal training. Let me do the heavy lifting on the program
             </li>
-            <li class="pt10 pb10">
-                Do something you wouldn’t have had the time or money for in the past
-            </li>
-            <li class="pt10 pb10">
-                Overcome this negative situation with a positive.
-            </li>
-            </ul>
+            <li class=" pt10 pb10">Goal matched plan that works for you</li>
+            <li class=" pt10 pb10">20+ years of training experience</li>
+            <li class=" pt10 pb10">Straight talking, no-nonsense honest advice and support. No gimmicks</li>
+        </ul>
     </div>
 </div>
 
 <!-- Sign Up -->
-<div class="parallax-container main-sct-reg">
+<div class="parallax-container main-sct-reg mb20">
     <div class="parallax">
         <img src="{% static 'img/gym-three.jpg' %}">
     </div>
