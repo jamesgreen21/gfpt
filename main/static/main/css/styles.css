@@ -49,7 +49,6 @@
 .advert-msg {
   position: absolute;
   height: 40px;
-  font-weight: bold;
   opacity: 0;
   top: 0;
   left: 50%;
@@ -62,26 +61,26 @@
 }
 
 .w1 {
-  animation: w1anim 10s infinite;
+  animation: w1anim 8s infinite;
 }
 
 .w2 {
-  animation: w2anim 10s infinite;
+  animation: w2anim 8s infinite;
 }
 
 .w3 {
-  animation: w3anim 10s infinite;
+  animation: w3anim 8s infinite;
 }
 
 .w4 {
-  animation: w4anim 10s infinite;
+  animation: w4anim 8s infinite;
 }
 
 @keyframes w1anim {
   0% {
     opacity: 0;
   }
-  13% {
+  10% {
     opacity: 1;
   }
   25% {
@@ -93,7 +92,7 @@
   25% {
     opacity: 0;
   }
-  37% {
+  35% {
     opacity: 1;
   }
   50% {
@@ -105,7 +104,7 @@
   50% {
     opacity: 0;
   }
-  63% {
+  60% {
     opacity: 1;
   }
   75% {
@@ -117,7 +116,7 @@
   75% {
     opacity: 0;
   }
-  87% {
+  85% {
     opacity: 1;
   }
   100% {
