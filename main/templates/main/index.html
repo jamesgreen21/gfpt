@@ -7,27 +7,6 @@
 {% endblock styles %}
 
 {% block content %}
-<!-- Login *Modal Structure -->
-<div id="modalReg" class="modal white-text">
-    <div class="modal-content black center-align">
-        <img class="large-logo" src="{% static 'img/GF_Logo_2c.png' %}" alt="">
-        <h4>Login</h4>
-    </div>
-    <div class="modal-detail grey darken-4">
-        <form method="POST" class="container pt20 pb20" action="{% url 'index' %}">
-            {% csrf_token %}
-            <div class="input-field">
-                {{ form.username|materializecss:"icon=fa fa-user" }}
-                {{ form.password|materializecss:"icon=fa fa-unlock" }}
-            </div>
-            <div class="btn-field center-align pt20 pb20">
-                <a href="#!" class="modal-close red darken-1 btn-large mr10">Na..</a>
-                <button type="submit" class="btn-large green darken-2">Go!</button>
-            </div>
-        </form>
-    </div>
-</div>
-
 <!-- Header -->
 <div class="parallax-container app-header">
     <div class="parallax">
@@ -40,7 +19,7 @@
         <div><a class="btn-large red darken-1" href="{% url 'accounts:logout' %}">Logout</a></div>
         {% else %}
         <div class="pb10">
-            <a class="black-text btn-large grey lighten-5 modal-trigger" href="#modalReg">Login</a>
+            <a class="black-text btn-large grey lighten-5" href="{% url 'accounts:login' %}">Login</a>
         </div>
         <div><a class="btn-large red darken-1" href="{% url 'accounts:register' %}">Register</a></div>
         {% endif %}
@@ -131,6 +110,7 @@
 {% for testimonial in testimonials %}
 <div id="modal{{ testimonial.id }}" class="modal center-align white-text">
     <div class="modal-content black">
+        <a href="#!" class="modal-close white-text"><i class="material-icons right">close</i></a>
         <div class="modelScroll">
             <h6>Scroll</h6>
             <i class="fa fa-chevron-down"></i>
@@ -142,6 +122,9 @@
         <h5><span class="red-text">Goal: </span>{{ testimonial.goal }}</h5>
         <div class="left-align p5">
             <p>{{ testimonial.content|linebreaks }}</p>
+            <div class="center-align">
+                <a href="#!" class="modal-close waves-effect waves-light green btn-large">Go Back</a>
+            </div>
         </div>
     </div>
 </div>
@@ -155,7 +138,7 @@
     </div>
 </div>
 
-<!-- Recent Posts *Card -->
+<!-- Instgram Posts *Card -->
 <div class="row white">
     <div class="col s12">
         <h2 class="center-align pt20 pb20">Recent Posts</h2>

@@ -32,11 +32,7 @@
             class="fa fa-user-plus white-text"></i>Register</a>
     </li>
     <li class="divider"></li>
-    {% if nbar == 'home' %}
-    <li><a class="white-text modal-trigger" href="#modalReg"><i class="fa fa-arrow-right white-text"></i>Login</a></li>
-    {% else %}
     <li><a class="white-text" href="{% url 'accounts:login' %}"><i class="fa fa-arrow-right white-text"></i>Login</a></li>
-    {% endif %}
     {% endif %}
 </ul>
 
@@ -80,13 +76,7 @@
     <li>
         <div class="divider mt10 mb10"></div>
     </li>
-
-    {% if nbar == 'home' %}
-    <li><a class="white-text mt10 modal-trigger" href="#modalReg"><i class="fa fa-user white-text"></i>Login</a></li>
-    {% else %}
     <li><a class="white-text mt10" href="{% url 'accounts:login' %}"><i class="fa fa-user white-text"></i>Login</a></li>
-    {% endif %}
-
 
     <li><a class="white-text mt10" href="{% url 'accounts:register' %}">
         <i class="fa fa-user-plus white-text"></i>Register
