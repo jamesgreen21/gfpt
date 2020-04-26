@@ -172,8 +172,9 @@
 
 .modal-content .modal-close {
   position: fixed;
-  top: 10px;
-  right: 10px;
+  top: 30px;
+  right: 20px;
+  z-index: 1;
 }
 
 .modal-content {
