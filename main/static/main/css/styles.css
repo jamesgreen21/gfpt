@@ -47,6 +47,9 @@
 
 /* ----------Mid Secion---------- */
 .advert-msg {
+  text-transform: uppercase;
+  width: 100%;
+  font-size: ;
   position: absolute;
   height: 40px;
   opacity: 0;

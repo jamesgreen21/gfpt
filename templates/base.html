@@ -1,4 +1,5 @@
 {% load static %}
+{% load materializecss %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -102,13 +103,13 @@
                 <div class="col l5 s12 center-align">
                     <h4 class="red-text">Newsletter Email</h4>
                     <p>Subscribe to our weekly drop of exclusive knowledge. Just enter your email below:</p>
-                    <form action="">
+                    <form action="{% url 'subscribe' %}" method="POST">
+                        {% csrf_token %}
                         <div class="input-field">
-                            <input id="email" type="email" class="validate">
-                            <label for="email">Email</label>
+                            {{ subscribe_form }}
                         </div>
                         <div class="btn-field center-align">
-                            <a class="btn-large red darken-1">Let's go!</a>
+                            <button class="btn-large red darken-1" type="submit">Let's go!</button>
                         </div>
                     </form>
                 </div>
