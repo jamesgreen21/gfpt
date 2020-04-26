@@ -173,13 +173,6 @@
   background: transparent;
 }
 
-.modal-content .modal-close {
-  position: fixed;
-  top: 30px;
-  right: 20px;
-  z-index: 1;
-}
-
 .modal-content {
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;

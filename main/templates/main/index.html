@@ -108,22 +108,22 @@
 <!-- Testimonial *Modal Structure -->
 {% if testimonials.all %}
 {% for testimonial in testimonials %}
-<div id="modal{{ testimonial.id }}" class="modal center-align white-text">
+<div id="modal{{ testimonial.id }}" class="modal black center-align white-text">
     <div class="modal-content black">
-        <a href="#!" class="white-text modal-close"><i class="fa fa-close"></i></a>
+        <a href="#!" class="red-text darken-1 modal-close">Go Back</a>
         <div class="modelScroll">
             <h6>Scroll</h6>
             <i class="fa fa-chevron-down"></i>
         </div>
-        <img class="responsive-img pt10" src="{{ testimonial.image.url }}">
     </div>
+    <img class="responsive-img pt10" src="{{ testimonial.image.url }}">
     <div class="modal-detail grey darken-4 p5">
         <h4>{{ testimonial.title }}</h4>
         <h5><span class="red-text">Goal: </span>{{ testimonial.goal }}</h5>
         <div class="left-align p5">
             <p>{{ testimonial.content|linebreaks }}</p>
             <div class="center-align pb10">
-                <a href="#!" class="grey-text darken-4 modal-close">Go Back</a>
+                <a href="#!" class="red-text darken-1 modal-close">Go Back</a>
             </div>
         </div>
     </div>
