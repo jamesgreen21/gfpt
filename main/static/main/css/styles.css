@@ -1,3 +1,19 @@
+/*----------Modal Popups----------*/
+
+.modal {
+  background: transparent;
+}
+
+.modal-content {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.modal-detail {
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
 /*----------Header----------*/
 
 #animate3 {
@@ -167,23 +183,11 @@
   transform: translateX(-50%);
 }
 
-/*----------Modal Popups----------*/
-
-.modal {
-  background: transparent;
+/*----------Instagram/Post Section----------*/
+.post-header{
+  border-radius: 10px;
 }
 
-.modal-content {
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
-}
-
-.modal-detail {
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-}
-
-/*----------Instagram Card----------*/
 .main-social i {
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
