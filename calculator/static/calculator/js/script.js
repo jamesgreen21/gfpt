@@ -37,7 +37,7 @@ document
     var targetEl = document.getElementById('calorieOutput')
 
     if (!result) {
-        targetEl.innerHTML = 'Waiting';
+        targetEl.innerHTML = 'Awaiting Inputs';
         targetEl.classList.remove("green");
         targetEl.classList.add("blue");
     } else {
