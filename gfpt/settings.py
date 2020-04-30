@@ -24,7 +24,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # PRODUCTION MODE: False if not in os.environ
-DEBUG = True
+
+DEBUG =(os.environ.get('DEBUG_VALUE') == 'True')
 
 ALLOWED_HOSTS = ['http://127.0.0.1:8000/', '127.0.0.1', 'gfpt.herokuapp.com']
 
@@ -133,10 +134,7 @@ LOGOUT_URL = 'index'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-ANIMEJS_LIB = os.path.join(BASE_DIR, 'node_modules/animejs')
-MATERIALIZECSS_ICON_SET = 'fontawesome'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_TMP = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
@@ -149,6 +147,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "main/static"),
     os.path.join(BASE_DIR, "accounts/static"),
 ]
+
+MATERIALIZECSS_ICON_SET = 'fontawesome'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'

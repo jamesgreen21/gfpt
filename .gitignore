@@ -20,6 +20,8 @@ db.sqlite3
 # Environment
 /.idea
 /.venv
+/.env
+.venv
 .env
 /.idea_modules
 .idea

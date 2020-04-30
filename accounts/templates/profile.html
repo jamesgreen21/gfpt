@@ -22,7 +22,8 @@
 <!--Profile Form-->
 <form class="row white-text" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
-    <div class="col s12 black pt20 pb20">
+    <div class="col s12 offset-m1 m10 offset-l2 l8 center-align pb20">
+        <h5>My Profile</h5>
         <p class="center-align">Welcome back {% if user.first_name %}{{user.first_name}}{% else %}{{user.username}}{% endif %}</p>
         <div class="avatar-upload">
             <div class="avatar-edit">
@@ -39,7 +40,7 @@
             <h5>{{user.email}}</h5>
         </div>
     </div>
-    <div class="col s12 grey darken-4">
+    <div class="col s12 offset-m1 m10 offset-l2 l8 grey darken-4 pt20">
         <div class="input-field row">
             {{ u_form.username|materializecss:"s12, icon=fa fa-user" }}
             {{ u_form.email|materializecss:"s12, icon=fa fa-envelope" }}

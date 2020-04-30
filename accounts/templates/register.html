@@ -20,10 +20,11 @@
 
 <!--Register Form-->
 <div class="row white-text">
-    <div class="col s12 black center-align">
-        <p class="center-align">Please fill out all fields below</p>
+    <div class="col s12 offset-m1 m10 offset-l2 l8 center-align pb20">
+        <h5>Registration</h5>
+        <p>Please fill out all fields below:</p>
     </div>
-    <div class="col s12 grey darken-4">
+    <div class="col s12 offset-m1 m10 offset-l2 l8 grey darken-4 pt20">
         <form method="POST" enctype="multipart/form-data" action="{% url 'accounts:register' %}">
             {% csrf_token %}
             <div class="input-field">

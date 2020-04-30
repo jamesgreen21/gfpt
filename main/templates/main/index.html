@@ -15,7 +15,9 @@
     <img id="animate2" class="app-sct-logo" src="{% static 'img/GF_Logo_2c.png' %}" alt="">
     <div id="animate1" class="main-reg-container">
         {% if user.is_authenticated %}
-        <div class="pb10"><a class="btn-large disabled">{{user.username}}</a></div>
+        <div class="pb10">
+            <a class="black-text btn-large grey lighten-5" href="{% url 'accounts:profile' %}">{{user.username}}</a>
+        </div>
         <div><a class="btn-large red darken-1" href="{% url 'accounts:logout' %}">Logout</a></div>
         {% else %}
         <div class="pb10">
@@ -157,7 +159,7 @@
                 <span class="card-title activator"><i class="material-icons left">person_pin</i>Geoff says<i
                         class="material-icons right">more_vert</i></span>
                 <p>⁣Tight glutes often = lower back pain, knee pain, hamstring pain, hip pain, problems getting low into
-                    a deadlift / other exercises and just a whole other shit heap of problems.⁣</p>
+                    a deadlift / other...⁣</p>
                 <div class="pt10 grey-text text-darken-2">
                     <i class="fa fa-comment"></i> 0
                     <span class="pl10"><i class="fa fa-eye blue-text"></i> 230</span>
@@ -194,7 +196,7 @@
                 <span class="card-title activator"><i class="material-icons left">person_pin</i>Geoff says<i
                         class="material-icons right">more_vert</i></span>
                 <p>One thing I’ve noticed while building home programmes is a lot of people have a couple of light
-                    dumbbells knocking about. </p>
+                    dumbbells knocking about...</p>
                 <div class="pt10 grey-text text-darken-2">
                     <i class="fa fa-comment"></i> 2
                     <span class="pl10"><i class="fa fa-eye blue-text"></i> 250</span>

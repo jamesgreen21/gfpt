@@ -9,6 +9,7 @@ from .forms import (
     UserUpdateForm,
     ProfileRegisterForm,
 )
+from marketing.forms import EmailSubscribeForm
 
 
 @login_required
@@ -18,10 +19,12 @@ def user_logout(request):
     return redirect('index')
 
 
+
 def register(request):
     """
     Returns a view that renders the register page and form
     """
+    subscribe_form = EmailSubscribeForm()
     if request.method == 'POST':
         form = UserRegisterForm(data=request.POST)
         if form.is_valid():
@@ -34,6 +37,7 @@ def register(request):
     context = {
         'title': 'Register',
         'form': form,
+        'subscribe_form': subscribe_form,
     }
     return render(request, 'register.html', context)
 
@@ -43,6 +47,7 @@ def profile(request):
     """
     Returns a view that renders the profile page and form
     """
+    subscribe_form = EmailSubscribeForm()
     if request.method == 'POST':
         u_form = UserUpdateForm(request.POST, instance=request.user)
         p_form = ProfileRegisterForm(
@@ -65,7 +70,8 @@ def profile(request):
     context = {
         'title': 'Profile',
         'u_form': u_form,
-        'p_form': p_form
+        'p_form': p_form,
+        'subscribe_form': subscribe_form,
     }
 
     return render(request, 'profile.html', context)
