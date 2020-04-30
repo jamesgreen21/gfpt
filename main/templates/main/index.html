@@ -8,7 +8,7 @@
 
 {% block content %}
 <!-- Header -->
-<div class="parallax-container app-header">
+<header class="parallax-container app-header">
     <div class="parallax">
         <img id="animate3" src="{% static 'img/profile-main-long.jpg' %}">
     </div>
@@ -26,10 +26,10 @@
         <div><a class="btn-large red darken-1" href="{% url 'accounts:register' %}">Register</a></div>
         {% endif %}
     </div>
-</div>
+</header>
 
 <!-- Customise *Card -->
-<div class="row black white-text">
+<section class="row black white-text">
     <div class="col s12 center-align">
         <h3 class="pt20 pb10 red-text">Customise your wokouts today</h3>
         <div class="advert-container center-align">
@@ -59,23 +59,29 @@
             <li class="pt10 pb10">I’m looking forward to working with you</li>
         </ul>
     </div>
-</div>
+</section>
 
-<!-- Calculator *Card -->
-<div class="row grey darken-4">
-    <div class="col s12 center-align pt20 pb20">
+<!-- Advert *Card -->
+<article class="row grey darken-4">
+    <div class="col s12 center-align pt20 pb20 white-text">
         <img class="small-logo" src="{% static 'img/logo-2.png' %}" alt="">
-        <h4 class="white-text">Try my FREE Calorie Calculator</h4>
-        <p class="pt20">
-            <a class="btn-floating btn-large waves-effect waves-light red darken-1 pulse" href="{% url 'calc' %}"><i
-                    class="fa fa-calculator"></i></a>
-        </p>
+        <h4>Get FREE stuff!</h4>
+        <p>Subscribe to my weekly drop of exclusive knowledge. Just enter your email below:</p>
+        <form action="{% url 'subscribe' %}" method="POST">
+            {% csrf_token %}
+            <div class="input-field">
+                {{ subscribe_form }}
+            </div>
+            <div class="btn-field center-align">
+                <button class="btn-large red darken-1" type="submit">Let's go!</button>
+            </div>
+        </form>
     </div>
-</div>
+</article>
 
 <!-- Testimonials *Carousel -->
 {% if testimonials.all %}
-<div class="row pt20">
+<section class="row pt20">
     <h3 class="white-text center-align">Testimonials</h3>
     <div class="hide-on-small-only col m1">
         <div class="carousel-btn">
@@ -104,7 +110,7 @@
             </button>
         </div>
     </div>
-</div>
+</section>
 {% endif %}
 
 <!-- Testimonial *Modal Structure -->
@@ -134,14 +140,26 @@
 {% endif %}
 
 <!-- Logo -->
-<div class="row black white-text pt30 pb30">
+<section class="row black white-text pt30 pb30">
     <div class="col s12 center-align">
         <img class="large-logo" src="{% static 'img/GF_Logo_2c.png' %}" alt="">
     </div>
-</div>
+</section>
+
+<!-- Calculator *Card -->
+<article class="row grey darken-4">
+    <div class="col s12 center-align pt20 pb20">
+        <img class="small-logo" src="{% static 'img/logo-2.png' %}" alt="">
+        <h4 class="white-text">Try my FREE Calorie Calculator</h4>
+        <p class="pt20">
+            <a class="btn-floating btn-large waves-effect waves-light red darken-1 pulse" href="{% url 'calc' %}"><i
+                    class="fa fa-calculator"></i></a>
+        </p>
+    </div>
+</article>
 
 <!-- Instgram Posts *Card -->
-<div class="row white">
+<section class="row white">
     <div class="col s12">
         <div class="insta-bg post-header">
             <h2 class="center-align pt20 pb20 white-text">Recent Posts</h2>
@@ -226,10 +244,10 @@
             </div>
         </div>
     </div>
-</div>
+</section>
 
 <!-- Instagram link -->
-<div class="parallax-container">
+<section class="parallax-container">
     <div class="parallax">
         <img src="{% static 'img/dumbbells.jpg' %}">
     </div>
@@ -244,10 +262,10 @@
             </a>
         </div>
     </div>
-</div>
+</section>
 
-<!-- Advert *Card -->
-<div class="row black white-text">
+<!-- Benefits *Card -->
+<section class="row black white-text">
     <div class="col s12 center-align">
         <h3 class="pt20 pb20 red-text">Benefits</h3>
         <ul>
@@ -260,10 +278,10 @@
             <li class=" pt10 pb10">Straight talking, no-nonsense honest advice and support. No gimmicks</li>
         </ul>
     </div>
-</div>
+</section>
 
 <!-- Sign Up -->
-<div class="parallax-container main-sct-reg mb20">
+<article class="parallax-container main-sct-reg mb20">
     <div class="parallax">
         <img src="{% static 'img/gym-three.jpg' %}">
     </div>
@@ -273,7 +291,7 @@
             <a class="btn-large red darken-1" href="{% url 'accounts:register' %}">Get Involved</a>
         </div>
     </div>
-</div>
+</article>
 
 {% endblock content %}
 
