@@ -37,23 +37,26 @@
   }
 }
 
+.app-header {
+  height: 100vh;
+}
+
 .main-reg-container {
   display: none;
   position: absolute;
-  top: 47vh;
+  top: 50vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
   text-align: center;
-  width: 100%;
-}
-
-@media (min-width: 600px) {
-  .main-reg-container {
-    top: 350px;
-  }
 }
 
 @media (min-width: 900px) {
+  .app-header {
+    height: 800px;
+  }  
   .main-reg-container {
-    top: 500px;
+    top: 400px;
   }
 }
 
@@ -181,6 +184,12 @@
   top: 70%;
   left: 50%;
   transform: translateX(-50%);
+}
+
+/*----------Calculator Section----------*/
+
+.article {
+  max-width: 600px;
 }
 
 /*----------Instagram/Post Section----------*/

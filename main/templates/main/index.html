@@ -13,19 +13,20 @@
         <img id="animate3" src="{% static 'img/profile-main-long.jpg' %}">
     </div>
     <img id="animate2" class="app-sct-logo" src="{% static 'img/GF_Logo_2c.png' %}" alt="">
-    <div id="animate1" class="main-reg-container">
-        {% if user.is_authenticated %}
-        <div class="pb10">
-            <a class="black-text btn-large grey lighten-5" href="{% url 'accounts:profile' %}">{{user.username}}</a>
-        </div>
-        <div><a class="btn-large red darken-1" href="{% url 'accounts:logout' %}">Logout</a></div>
-        {% else %}
-        <div class="pb10">
-            <a class="black-text btn-large grey lighten-5" href="{% url 'accounts:login' %}">Login</a>
-        </div>
-        <div><a class="btn-large red darken-1" href="{% url 'accounts:register' %}">Register</a></div>
-        {% endif %}
-    </div>
+    <!-- Advert *Card -->
+    <article id="animate1" class="main-reg-container pt10 pl10 pb10 pr10 grey darken-4 white-text z-depth-3">
+            <h4>Get FREE stuff init!</h4>
+            <p>Sign up for my weekly emails</p>
+            <form action="{% url 'subscribe' %}" method="POST">
+                {% csrf_token %}
+                <div class="input-field">
+                    {{ subscribe_form }}
+                </div>
+                <div class="btn-field center-align">
+                    <button class="btn-large red darken-1" type="submit">Fuck it!</button>
+                </div>
+            </form>
+    </article>
 </header>
 
 <!-- Customise *Card -->
@@ -61,21 +62,15 @@
     </div>
 </section>
 
-<!-- Advert *Card -->
-<article class="row grey darken-4">
-    <div class="col s12 center-align pt20 pb20 white-text">
+<!-- Calculator *Card -->
+<article class="row grey darken-4 article">
+    <div class="col s12 center-align pt20 pb20">
         <img class="small-logo" src="{% static 'img/logo-2.png' %}" alt="">
-        <h4>Get FREE stuff!</h4>
-        <p>Subscribe to my weekly drop of exclusive knowledge. Just enter your email below:</p>
-        <form action="{% url 'subscribe' %}" method="POST">
-            {% csrf_token %}
-            <div class="input-field">
-                {{ subscribe_form }}
-            </div>
-            <div class="btn-field center-align">
-                <button class="btn-large red darken-1" type="submit">Let's go!</button>
-            </div>
-        </form>
+        <h4 class="white-text">Try my FREE Calorie Calculator</h4>
+        <p class="pt20">
+            <a class="btn-floating btn-large waves-effect waves-light red darken-1 pulse" href="{% url 'calc' %}"><i
+                    class="fa fa-calculator"></i></a>
+        </p>
     </div>
 </article>
 
@@ -145,18 +140,6 @@
         <img class="large-logo" src="{% static 'img/GF_Logo_2c.png' %}" alt="">
     </div>
 </section>
-
-<!-- Calculator *Card -->
-<article class="row grey darken-4">
-    <div class="col s12 center-align pt20 pb20">
-        <img class="small-logo" src="{% static 'img/logo-2.png' %}" alt="">
-        <h4 class="white-text">Try my FREE Calorie Calculator</h4>
-        <p class="pt20">
-            <a class="btn-floating btn-large waves-effect waves-light red darken-1 pulse" href="{% url 'calc' %}"><i
-                    class="fa fa-calculator"></i></a>
-        </p>
-    </div>
-</article>
 
 <!-- Instgram Posts *Card -->
 <section class="row white">
@@ -281,7 +264,7 @@
 </section>
 
 <!-- Sign Up -->
-<article class="parallax-container main-sct-reg mb20">
+<section class="parallax-container main-sct-reg mb20">
     <div class="parallax">
         <img src="{% static 'img/gym-three.jpg' %}">
     </div>
@@ -291,7 +274,7 @@
             <a class="btn-large red darken-1" href="{% url 'accounts:register' %}">Get Involved</a>
         </div>
     </div>
-</article>
+</section>
 
 {% endblock content %}
 
