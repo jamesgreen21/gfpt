@@ -94,6 +94,7 @@ else:
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
+CONN_MAX_AGE = None
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -158,6 +159,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
     os.path.join(BASE_DIR, "main/static"),
     os.path.join(BASE_DIR, "accounts/static"),
+    os.path.join(BASE_DIR, "calculator/static"),
 ]
 
 MEDIAFILES_LOCATION = 'media'

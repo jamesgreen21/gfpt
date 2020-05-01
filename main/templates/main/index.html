@@ -39,28 +39,52 @@
             <h4 class="advert-msg w3 m0">No Contract</h4>
             <h4 class="advert-msg w4 m0">GFPT</h4>
         </div>
-        <ul>
-            <li class="pt10 pb10">
-                I’m Geoff Foden and and I’m a personal trainer and online coach.
-            </li>
-            <li class="pt10 pb10">
-                The internet is a mind field of conflicting information and it’s hard to know who to believe.
-            </li>
-            <li class="pt10 pb10">
-                I get it because I’ve been there. That’s why I do what I do.
-                I help people make their outside reflect the awesome that they deserve.
-            </li>
-            <li>
-                <h6 class="red-text">Like these guys...</h6>
-            </li>
-        </ul>
+        <p>
+            I’m Geoff Foden and and I’m a personal trainer and online coach.
+        </p>
+        <p>
+            The internet is a minefield of conflicting information and it’s hard to know who to believe.
+        </p>
+        <p>
+            I get it because I’ve been there. That’s why I do what I do.
+            I help people make their outside reflect the awesome that they deserve.
+        </p>
     </div>
 </section>
+
+<!-- Online Coaching *Card -->
+<section class="row grey darken-4 article white-text">
+    <div class="col s12 center-align">
+        <h3 class="pb10 red-text">GFPT Benefits</h3>
+        <p>So what is online coaching?</p>
+        <p>It’s like having me in your pocket .. 24/7.. (is that weird?!) to help and guide you on
+            your quest for greatness. </p>
+        <p>Here’s what my coaching includes:</p>
+        <ul>
+            <li class=" pt10 pb10">- Customised calories/macros suited to your goal</li>
+            <li class=" pt10 pb10">- Whatsapp support 24/7 whenever you need me</li>
+            <li class=" pt10 pb10">- Weekly Video Check in's from me</li>
+            <li class=" pt10 pb10">- Monthly catch up calls with me</li>
+        </ul>
+        <p>And most importantly it’s tailored to you and your preferences, your gym or equipment and your lifestyle.</p>
+    </div>
+</section>
+
+<!-- Ready to start LINK -->
+<article class="row black article">
+    <div class="col s12 center-align pt20 pb20">
+        <a class="btn-large red darken-1"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSfglVtK3h-0vmbGZb0GRhug6_vlEapxjeGUfpHA4UzsUYO1NA/viewform">
+            CLICK HERE
+        </a>
+    </div>
+</article>
 
 <!-- Testimonials *Carousel -->
 {% if testimonials.all %}
 <section class="row pt20">
     <h3 class="white-text center-align">Testimonials</h3>
+    <h6 class="red-text center-align">Check out these guys who took the plunge and changed their physique</h6>
     <div class="hide-on-small-only col m1">
         <div class="carousel-btn">
             <button onclick="$('.carousel').carousel('prev');" class="btn-floating btn grey darken-4">
@@ -117,12 +141,15 @@
 {% endfor %}
 {% endif %}
 
-<!-- Ready to start LINK -->
-<article class="row black article">
+<!-- Calculator *Card -->
+<article class="row grey darken-4 article">
     <div class="col s12 center-align pt20 pb20">
-        <a class="btn-large red darken-1"
-            href="https://docs.google.com/forms/d/e/1FAIpQLSfglVtK3h-0vmbGZb0GRhug6_vlEapxjeGUfpHA4UzsUYO1NA/viewform">I’m
-            ready</a>
+        <img class="small-logo" src="{% static 'img/logo-2.png' %}" alt="">
+        <h4 class="white-text">Try my FREE Calorie Calculator</h4>
+        <p class="pt20">
+            <a class="btn-floating btn-large waves-effect waves-light red darken-1 pulse" href="{% url 'calc' %}"><i
+                    class="fa fa-calculator"></i></a>
+        </p>
     </div>
 </article>
 
@@ -130,6 +157,24 @@
 <section class="row black white-text pt30 pb30">
     <div class="col s12 center-align">
         <img class="large-logo" src="{% static 'img/GF_Logo_2c.png' %}" alt="">
+    </div>
+</section>
+
+<!-- Instagram link -->
+<section class="parallax-container">
+    <div class="parallax">
+        <img src="{% static 'img/dumbbells.jpg' %}">
+    </div>
+    <div class="app-title-container">
+        <a href="https://www.instagram.com/geoff_fodenpt/" target=”_blank”>
+            <img class="circle instagram-color" src="{% static 'img/profile-insta.png' %}" alt="">
+        </a>
+        <h3 class="center-align white-text">Instagram</h3>
+        <div class="pt10 center-align main-social">
+            <a href="https://www.instagram.com/geoff_fodenpt/" class="white-text pt10 pb10" target=”_blank”>
+                <i class="fa fa-instagram insta-bg pr5 pl5"></i>
+            </a>
+        </div>
     </div>
 </section>
 
@@ -162,7 +207,9 @@
                 <span class="card-title grey-text text-darken-2"><i class="material-icons left">person_pin</i>
                     geoff_fodenpt<i class="material-icons right">close</i></span>
                 <div class="video-container">
-                    <iframe width="852" height="852" src="https://www.youtube.com/embed/sWh13lEQlXo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                </div>
+                    <iframe width="852" height="852" src="https://www.youtube.com/embed/sWh13lEQlXo" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe> </div>
                 <p>⁣Tight glutes often = lower back pain, knee pain, hamstring pain, hip pain, problems getting low into
                     a deadlift / other exercises and just a whole other shit heap of problems.⁣</p>
                 ⁣⁣<p>I’ve always found them hard to stretch, seated figure 4 stretch doesn’t seem to cut it, pigeon pose
@@ -196,7 +243,9 @@
                 <span class="card-title grey-text text-darken-2"><i class="material-icons left">person_pin</i>
                     geoff_fodenpt<i class="material-icons right">close</i></span>
                 <div class="video-container">
-                    <iframe width="852" height="852" src="https://www.youtube.com/embed/Lwr23n9Cpu0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe width="852" height="852" src="https://www.youtube.com/embed/Lwr23n9Cpu0" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
                 </div>
                 <p>One thing I’ve noticed while building home programmes is a lot of people have a couple of light
                     dumbbells knocking about. </p>
@@ -216,63 +265,6 @@
     </div>
 </section>
 
-<!-- Instagram link -->
-<section class="parallax-container">
-    <div class="parallax">
-        <img src="{% static 'img/dumbbells.jpg' %}">
-    </div>
-    <div class="app-title-container">
-        <a href="https://www.instagram.com/geoff_fodenpt/" target=”_blank”>
-            <img class="circle instagram-color" src="{% static 'img/profile-insta.png' %}" alt="">
-        </a>
-        <h3 class="center-align white-text">Instagram</h3>
-        <div class="pt10 center-align main-social">
-            <a href="https://www.instagram.com/geoff_fodenpt/" class="white-text pt10 pb10" target=”_blank”>
-                <i class="fa fa-instagram insta-bg pr5 pl5"></i>
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- Benefits *Card -->
-<section class="row black white-text">
-    <div class="col s12 center-align">
-        <h3 class="pt20 pb20 red-text">GFPT Benefits</h3>
-        <p>So what is online coaching?</p>
-        <p>It’s like having me in your pocket .. 24/7.. (is that weird?!) to help and guide you on
-            your quest for greatness. </p>
-        <p>Here’s what my coaching includes:</p>
-        <ul>
-            <li class=" pt10 pb10">- Customised calories/macros suited to your goal</li>
-            <li class=" pt10 pb10">- Whatsapp support 24/7 whenever you need me</li>
-            <li class=" pt10 pb10">- Weekly Video Check in's from me</li>
-            <li class=" pt10 pb10">- Monthly catch up calls with me</li>
-        </ul>
-        <p>And most importantly it’s tailored to you and your preferences, your gym or equipment and your lifestyle.</p>
-    </div>
-</section>
-
-<!-- Ready to start LINK -->
-<article class="row black article">
-    <div class="col s12 center-align pt20 pb20">
-        <a class="btn-large red darken-1"
-            href="https://docs.google.com/forms/d/e/1FAIpQLSfglVtK3h-0vmbGZb0GRhug6_vlEapxjeGUfpHA4UzsUYO1NA/viewform">I’m
-            ready</a>
-    </div>
-</article>
-
-<!-- Calculator *Card -->
-<article class="row grey darken-4 article">
-    <div class="col s12 center-align pt20 pb20">
-        <img class="small-logo" src="{% static 'img/logo-2.png' %}" alt="">
-        <h4 class="white-text">Try my FREE Calorie Calculator</h4>
-        <p class="pt20">
-            <a class="btn-floating btn-large waves-effect waves-light red darken-1 pulse" href="{% url 'calc' %}"><i
-                    class="fa fa-calculator"></i></a>
-        </p>
-    </div>
-</article>
-
 <!-- Sign Up -->
 <section class="parallax-container main-sct-reg mb20">
     <div class="parallax">
@@ -281,7 +273,9 @@
     <div class="app-title-container">
         <h3 class="center-align white-text">Join Now</h3>
         <div class="pt10 center-align">
-            <a class="btn-large red darken-1" href="{% url 'accounts:register' %}">Go!</a>
+            <a class="btn-large red darken-1"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSfglVtK3h-0vmbGZb0GRhug6_vlEapxjeGUfpHA4UzsUYO1NA/viewform">I’m
+                ready</a>
         </div>
     </div>
 </section>
