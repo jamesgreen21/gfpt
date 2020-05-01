@@ -16,5 +16,4 @@ def index(request):
         'testimonials': testimonials,
         'subscribe_form': subscribe_form,
     }
-
     return render(request, 'main/index.html', context)

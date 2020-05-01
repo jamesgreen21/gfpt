@@ -15,24 +15,24 @@
     <img id="animate2" class="app-sct-logo" src="{% static 'img/GF_Logo_2c.png' %}" alt="">
     <!-- Advert *Card -->
     <article id="animate1" class="main-reg-container pt10 pl10 pb10 pr10 grey darken-4 white-text z-depth-3">
-            <h4>Get FREE stuff init!</h4>
-            <p>Sign up for my weekly emails</p>
-            <form action="{% url 'subscribe' %}" method="POST">
-                {% csrf_token %}
-                <div class="input-field">
-                    {{ subscribe_form }}
-                </div>
-                <div class="btn-field center-align">
-                    <button class="btn-large red darken-1" type="submit">Fuck it!</button>
-                </div>
-            </form>
+        <h4>Get FREE stuff</h4>
+        <p>Sign up for my weekly emails</p>
+        <form action="{% url 'subscribe' %}" method="POST">
+            {% csrf_token %}
+            <div class="input-field">
+                {{ subscribe_form }}
+            </div>
+            <div class="btn-field center-align">
+                <button class="btn-large red darken-1" type="submit">Go!</button>
+            </div>
+        </form>
     </article>
 </header>
 
 <!-- Customise *Card -->
 <section class="row black white-text">
     <div class="col s12 center-align">
-        <h3 class="pt20 pb10 red-text">Customise your wokouts today</h3>
+        <h3 class="pt20 pb10 red-text">Start Getting Results Today</h3>
         <div class="advert-container center-align">
             <h4 class="advert-msg w1 m0">Personalised</h4>
             <h4 class="advert-msg w2 m0">Online</h4>
@@ -41,38 +41,21 @@
         </div>
         <ul>
             <li class="pt10 pb10">
-                My name is Geoff Foden and I firstly wanted to say thanks for
-                considering me as a personal trainer.
-
+                I’m Geoff Foden and and I’m a personal trainer and online coach.
             </li>
             <li class="pt10 pb10">
-                I know where you’ve been. Spent time on yourself and not seen
-                the changes you want. Sick and tired of making excuses and
-                want to see real change. I can help
+                The internet is a mind field of conflicting information and it’s hard to know who to believe.
             </li>
             <li class="pt10 pb10">
-                When you sign on as a client with me you aren’t just getting a
-                pre-packaged program and being sent on your way. You get a
-                kick up the butt, you get help and support and most importantly,
-                you get success.
-
+                I get it because I’ve been there. That’s why I do what I do.
+                I help people make their outside reflect the awesome that they deserve.
             </li>
-            <li class="pt10 pb10">I’m looking forward to working with you</li>
+            <li>
+                <h6 class="red-text">Like these guys...</h6>
+            </li>
         </ul>
     </div>
 </section>
-
-<!-- Calculator *Card -->
-<article class="row grey darken-4 article">
-    <div class="col s12 center-align pt20 pb20">
-        <img class="small-logo" src="{% static 'img/logo-2.png' %}" alt="">
-        <h4 class="white-text">Try my FREE Calorie Calculator</h4>
-        <p class="pt20">
-            <a class="btn-floating btn-large waves-effect waves-light red darken-1 pulse" href="{% url 'calc' %}"><i
-                    class="fa fa-calculator"></i></a>
-        </p>
-    </div>
-</article>
 
 <!-- Testimonials *Carousel -->
 {% if testimonials.all %}
@@ -134,6 +117,15 @@
 {% endfor %}
 {% endif %}
 
+<!-- Ready to start LINK -->
+<article class="row black article">
+    <div class="col s12 center-align pt20 pb20">
+        <a class="btn-large red darken-1"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSfglVtK3h-0vmbGZb0GRhug6_vlEapxjeGUfpHA4UzsUYO1NA/viewform">I’m
+            ready</a>
+    </div>
+</article>
+
 <!-- Logo -->
 <section class="row black white-text pt30 pb30">
     <div class="col s12 center-align">
@@ -142,13 +134,13 @@
 </section>
 
 <!-- Instgram Posts *Card -->
-<section class="row white">
+<section class="row black">
     <div class="col s12">
         <div class="insta-bg post-header">
             <h2 class="center-align pt20 pb20 white-text">Recent Posts</h2>
         </div>
     </div>
-    <div class="col s12 m6">
+    <div class="col s12 m6 white">
         <div class="card hoverable">
             <div class="card-content">
                 <span class="card-title grey-text text-darken-3 center-align">Stretching for Gains</span>
@@ -170,10 +162,7 @@
                 <span class="card-title grey-text text-darken-2"><i class="material-icons left">person_pin</i>
                     geoff_fodenpt<i class="material-icons right">close</i></span>
                 <div class="video-container">
-                    <iframe
-                        src="https://scontent-lht6-1.cdninstagram.com/v/t50.2886-16/94334893_2354311498202979_5632289720351473884_n.mp4?_nc_ht=scontent-lht6-1.cdninstagram.com&_nc_cat=103&_nc_ohc=OjnikDFv604AX8yDpEE&oe=5EA8F29C&oh=989c9491d68c87be6791cb20f29d4927"
-                        allowfullscreen></iframe>
-                </div>
+                    <iframe width="852" height="852" src="https://www.youtube.com/embed/sWh13lEQlXo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                </div>
                 <p>⁣Tight glutes often = lower back pain, knee pain, hamstring pain, hip pain, problems getting low into
                     a deadlift / other exercises and just a whole other shit heap of problems.⁣</p>
                 ⁣⁣<p>I’ve always found them hard to stretch, seated figure 4 stretch doesn’t seem to cut it, pigeon pose
@@ -185,7 +174,7 @@
             </div>
         </div>
     </div>
-    <div class="col s12 m6">
+    <div class="col s12 m6 white">
         <div class="card hoverable">
             <div class="card-content">
                 <span class="card-title grey-text text-darken-3 center-align">Bands for Gains</span>
@@ -207,9 +196,7 @@
                 <span class="card-title grey-text text-darken-2"><i class="material-icons left">person_pin</i>
                     geoff_fodenpt<i class="material-icons right">close</i></span>
                 <div class="video-container">
-                    <iframe
-                        src="https://scontent-lhr8-1.cdninstagram.com/v/t50.2886-16/92189339_247142146415338_2170004289848750034_n.mp4?_nc_ht=scontent-lhr8-1.cdninstagram.com&_nc_cat=110&_nc_ohc=x0tUnM7ptNIAX9sZwjw&oe=5EA93712&oh=4a87f9c8e264d19ae8f610e1ee5db678"
-                        allowfullscreen></iframe>
+                    <iframe width="852" height="852" src="https://www.youtube.com/embed/Lwr23n9Cpu0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 <p>One thing I’ve noticed while building home programmes is a lot of people have a couple of light
                     dumbbells knocking about. </p>
@@ -238,7 +225,7 @@
         <a href="https://www.instagram.com/geoff_fodenpt/" target=”_blank”>
             <img class="circle instagram-color" src="{% static 'img/profile-insta.png' %}" alt="">
         </a>
-        <h4 class="center-align white-text">Instagram</h4>
+        <h3 class="center-align white-text">Instagram</h3>
         <div class="pt10 center-align main-social">
             <a href="https://www.instagram.com/geoff_fodenpt/" class="white-text pt10 pb10" target=”_blank”>
                 <i class="fa fa-instagram insta-bg pr5 pl5"></i>
@@ -250,18 +237,41 @@
 <!-- Benefits *Card -->
 <section class="row black white-text">
     <div class="col s12 center-align">
-        <h3 class="pt20 pb20 red-text">Benefits</h3>
+        <h3 class="pt20 pb20 red-text">GFPT Benefits</h3>
+        <p>So what is online coaching?</p>
+        <p>It’s like having me in your pocket .. 24/7.. (is that weird?!) to help and guide you on
+            your quest for greatness. </p>
+        <p>Here’s what my coaching includes:</p>
         <ul>
-            <li class=" pt10 pb10">No yearly contracts or sign-up fees</li>
-            <li class=" pt10 pb10">No time slots for training, you train when and where you need too</li>
-            <li class=" pt10 pb10">No worries - fool proof optimal training. Let me do the heavy lifting on the program
-            </li>
-            <li class=" pt10 pb10">Goal matched plan that works for you</li>
-            <li class=" pt10 pb10">20+ years of training experience</li>
-            <li class=" pt10 pb10">Straight talking, no-nonsense honest advice and support. No gimmicks</li>
+            <li class=" pt10 pb10">- Customised calories/macros suited to your goal</li>
+            <li class=" pt10 pb10">- Whatsapp support 24/7 whenever you need me</li>
+            <li class=" pt10 pb10">- Weekly Video Check in's from me</li>
+            <li class=" pt10 pb10">- Monthly catch up calls with me</li>
         </ul>
+        <p>And most importantly it’s tailored to you and your preferences, your gym or equipment and your lifestyle.</p>
     </div>
 </section>
+
+<!-- Ready to start LINK -->
+<article class="row black article">
+    <div class="col s12 center-align pt20 pb20">
+        <a class="btn-large red darken-1"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSfglVtK3h-0vmbGZb0GRhug6_vlEapxjeGUfpHA4UzsUYO1NA/viewform">I’m
+            ready</a>
+    </div>
+</article>
+
+<!-- Calculator *Card -->
+<article class="row grey darken-4 article">
+    <div class="col s12 center-align pt20 pb20">
+        <img class="small-logo" src="{% static 'img/logo-2.png' %}" alt="">
+        <h4 class="white-text">Try my FREE Calorie Calculator</h4>
+        <p class="pt20">
+            <a class="btn-floating btn-large waves-effect waves-light red darken-1 pulse" href="{% url 'calc' %}"><i
+                    class="fa fa-calculator"></i></a>
+        </p>
+    </div>
+</article>
 
 <!-- Sign Up -->
 <section class="parallax-container main-sct-reg mb20">
@@ -271,7 +281,7 @@
     <div class="app-title-container">
         <h3 class="center-align white-text">Join Now</h3>
         <div class="pt10 center-align">
-            <a class="btn-large red darken-1" href="{% url 'accounts:register' %}">Get Involved</a>
+            <a class="btn-large red darken-1" href="{% url 'accounts:register' %}">Go!</a>
         </div>
     </div>
 </section>
