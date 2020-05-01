@@ -27,7 +27,15 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 DEBUG =(os.environ.get('DEBUG_VALUE') == 'True')
 
-ALLOWED_HOSTS = ['http://127.0.0.1:8000/', '127.0.0.1', 'gfpt.herokuapp.com']
+ALLOWED_HOSTS = [
+    'http://127.0.0.1:8000/',
+    '127.0.0.1',
+    'gfpt.herokuapp.com',
+    'gf-pt.co.uk',
+    'www.gf-pt.co.uk',
+    'greencloud109.com',
+    'www.greencloud109.com',
+]
 
 
 # Application definition
