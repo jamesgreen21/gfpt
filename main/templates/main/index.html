@@ -9,38 +9,41 @@
 {% block content %}
 <!-- Header -->
 <header class="container-fluid pt50">
-    <div class="parallax-container app-header">
-        <div class="parallax">
-            <img id="animate3" src="{% static 'img/profile-main-long.jpg' %}">
+    <section class="row">
+        <div class="col s12 l10 offset-l1 parallax-container app-header">
+            <article class="parallax">
+                <img id="animate3" src="{% static 'img/profile-main-long.jpg' %}">
+            </article>
+            <img id="animate2" class="app-sct-logo" src="{% static 'img/GF_Logo_2c.png' %}" alt="">
+            <!-- Advert *Card -->
+            <article id="animate1" class="main-reg-container pt10 pl10 pb10 pr10 grey darken-4 white-text z-depth-3">
+                <h4>Get FREE stuff</h4>
+                <p>Sign up for my weekly emails</p>
+                <form action="{% url 'subscribe' %}" method="POST">
+                    {% csrf_token %}
+                    <div class="input-field">
+                        {{ subscribe_form }}
+                    </div>
+                    <div class="btn-field center-align">
+                        <button class="btn-large red darken-1" type="submit">Go!</button>
+                    </div>
+                </form>
+            </article>
         </div>
-        <img id="animate2" class="app-sct-logo" src="{% static 'img/GF_Logo_2c.png' %}" alt="">
-        <!-- Advert *Card -->
-        <article id="animate1" class="main-reg-container pt10 pl10 pb10 pr10 grey darken-4 white-text z-depth-3">
-            <h4>Get FREE stuff</h4>
-            <p>Sign up for my weekly emails</p>
-            <form action="{% url 'subscribe' %}" method="POST">
-                {% csrf_token %}
-                <div class="input-field">
-                    {{ subscribe_form }}
-                </div>
-                <div class="btn-field center-align">
-                    <button class="btn-large red darken-1" type="submit">Go!</button>
-                </div>
-            </form>
-        </article>
-    </div>
+    </section>
 </header>
 
 <!-- Customise *Card -->
 <section class="container-fluid black">
-    <div class="row white-text center-align">
-        <div class="col s12 l6">
-            <h3 class="pt20 pb10 red-text">Start Getting Results Today</h3>
-            <img class="circle responsive-img" src="{% static 'img/profile-main-short.jpg' %}" alt="">
-            </div>
-        <div class="col s12 l6">
+    <section class="row white-text center-align gfpt-card pb20">
+        <h3 class="pt20 pb10">Start Getting Results Today</h3>
+        <h5 class="pt20 pb10 red-text">Meet Geoff</h5>
+        <article class="col s12 m5 l4 offset-l2 offset-m1 pt20">
+            <img class="circle responsive-img" src="{% static 'img/deadlift-car-square.jpg' %}" alt="">
+        </article>
+        <article class="col s12 m5 l4 pt20">
             <p>
-                I’m Geoff Foden and and I’m a personal trainer and online coach.
+                I’m <span class="red-text">Geoff Foden</span> and and I’m a personal trainer and online coach.
             </p>
             <p>
                 The internet is a minefield of conflicting information and it’s hard to know who to believe.
@@ -49,134 +52,83 @@
                 I get it because I’ve been there. That’s why I do what I do.
                 I help people make their outside reflect the awesome that they deserve.
             </p>
-        </div>
-    </div>
+        </article>
+    </section>
     </div>
 </section>
 
 <!-- Online Coaching *Card -->
-<section class="container-fluid grey darken-4">
-    <div class="row grey darken-4 article white-text">
-        <div class="col s12 center-align">
-            <h3 class="pb10 red-text">GFPT Benefits</h3>
-            <p>So what is online coaching?</p>
-            <p>It’s like having me in your pocket .. 24/7.. (is that weird?!) to help and guide you on
-                your quest for greatness. </p>
-            <p>Here’s what my coaching includes:</p>
-            <ul>
-                <li class=" pt10 pb10">- Customised calories/macros suited to your goal</li>
-                <li class=" pt10 pb10">- Whatsapp support 24/7 whenever you need me</li>
-                <li class=" pt10 pb10">- Weekly Video Check in's from me</li>
-                <li class=" pt10 pb10">- Monthly catch up calls with me</li>
-            </ul>
+<section class="container-fluid black pt20 pb20 center-align">
+    <section class="row z-depth-2 hoverable">
+        <article class="col s12 pt10 pb10">
+            <img class="large-logo" src="{% static 'img/GF_Logo_2c.png' %}" alt="">
+            <h3 class="white-text">Benefits</h3>
+        </article>
+    </section>
+    <section class="row white gfpt-card">
+        <article class="col s12 l4 offset-l1">
+            <h5 class="red-text">Online coaching?</h5>
+            <p>It’s like having me in your pocket 24/7</p>
+            <p>Helping and guiding you on your quest for greatness</p>
+            <hr>
+            <div class="hoverable p5">
+                <h5 class="red-text">What's Included:</h5>
+                <p> - Customised calories/macros suited to your goal</p>
+                <p> - Whatsapp support 24/7 whenever you need me</p>
+                <p> - Weekly Video Check in's from me</p>
+                <p> - Monthly catch up calls with me</p>
+            </div>
+        </article>
+        <article class="col s12 l6 offset-l1 mt20">
+            <div class="slider">
+                <ul class="slides">
+                    {% if testimonials.all %}
+                    {% for testimonial in testimonials %}
+                    <li>
+                        <img src="{{ testimonial.image.url }}">
+                        <div class="caption center-right">
+                            <h3>{{ testimonial.title }}</h3>
+                            <h5 class="light grey-text text-lighten-3">{{ testimonial.goal }}</h5>
+                        </div>
+                    </li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+            </div>
+        </article>
+        <div class="col s12 center-align pt20 pb20">
             <p>And most importantly it’s tailored to you and your preferences, your gym or equipment and your lifestyle.
             </p>
+            <a class="btn-large red darken-1"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSfglVtK3h-0vmbGZb0GRhug6_vlEapxjeGUfpHA4UzsUYO1NA/viewform">
+                LETS GO!
+            </a>
         </div>
-    </div>
+    </section>
 </section>
 
-<!-- Ready to start LINK -->
-<article class="row black article">
-    <div class="col s12 center-align pt20 pb20">
-        <a class="btn-large red darken-1"
-            href="https://docs.google.com/forms/d/e/1FAIpQLSfglVtK3h-0vmbGZb0GRhug6_vlEapxjeGUfpHA4UzsUYO1NA/viewform">
-            CLICK HERE
-        </a>
-    </div>
-</article>
-
-<!-- Testimonials *Carousel -->
-{% if testimonials.all %}
-<section class="container-fluid pt20">
-    <div class="row">
-        <h3 class="white-text center-align">Testimonials</h3>
-        <h6 class="red-text center-align">Check out these guys who took the plunge and changed their physique</h6>
-        <div class="hide-on-small-only col m1">
-            <div class="carousel-btn">
-                <button onclick="$('.carousel').carousel('prev');" class="btn-floating btn grey darken-4">
-                    <i class="fa fa-chevron-left"></i>
-                </button>
-            </div>
-        </div>
-        <div class="col s12 m10">
-            <div class="carousel carousel-slider center">
-                {% for testimonial in testimonials %}
-                <div class="carousel-item white black-text" href="#">
-                    <img class="carousel-img" src="{{ testimonial.image.url }}">
-                    <a class="btn-floating btn-large waves-effect waves-light red modal-trigger pulse"
-                        href="#modal{{ testimonial.id }}">
-                        <i class="material-icons">comment</i>
-                    </a>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-        <div class="hide-on-small-only col m1">
-            <div class="carousel-btn">
-                <button onclick="$('.carousel').carousel('next');" class="btn-floating btn grey darken-4">
-                    <i class="fa fa-chevron-right"></i>
-                </button>
-            </div>
-        </div>
-    </div>
-</section>
-{% endif %}
-
-<!-- Testimonial *Modal Structure -->
-{% if testimonials.all %}
-{% for testimonial in testimonials %}
-<div id="modal{{ testimonial.id }}" class="modal black center-align white-text">
-    <div class="modal-content black">
-        <a href="#!" class="red-text darken-1 modal-close">Go Back</a>
-        <div class="modelScroll">
-            <h6>Scroll</h6>
-            <i class="fa fa-chevron-down"></i>
-        </div>
-    </div>
-    <img class="responsive-img pt10" src="{{ testimonial.image.url }}">
-    <div class="modal-detail grey darken-4 p5">
-        <h4>{{ testimonial.title }}</h4>
-        <h5><span class="red-text">Goal: </span>{{ testimonial.goal }}</h5>
-        <div class="left-align p5">
-            <p>{{ testimonial.content|linebreaks }}</p>
-            <div class="center-align pb10">
-                <a href="#!" class="red-text darken-1 modal-close">Go Back</a>
-            </div>
-        </div>
-    </div>
-</div>
-{% endfor %}
-{% endif %}
 
 <!-- Calculator *Card -->
-<article class="container-fluid grey darken-4 pt20 pb20">
-    <div class="row">
-        <div class="col s12 center-align article">
+<section class="container-fluid black pt20 pb20">
+    <section class="row center-align">
+        <article class="col s12">
             <img class="small-logo" src="{% static 'img/logo-2.png' %}" alt="">
             <h4 class="white-text">Try my FREE Calorie Calculator</h4>
             <p class="pt20">
                 <a class="btn-floating btn-large waves-effect waves-light red darken-1 pulse" href="{% url 'calc' %}"><i
                         class="fa fa-calculator"></i></a>
             </p>
-        </div>
-    </div>
-</article>
-
-<!-- Logo -->
-<section class="container-fluid black white-text pt30 pb30">
-    <div class="row">
-        <div class="col s12 center-align">
             <img class="large-logo" src="{% static 'img/GF_Logo_2c.png' %}" alt="">
-        </div>
-    </div>
+        </article>
+    </section>
 </section>
 
 <!-- Instagram link -->
 <section class="parallax-container">
-    <div class="parallax">
+    <article class="parallax">
         <img src="{% static 'img/dumbbells.jpg' %}">
-    </div>
-    <div class="app-title-container">
+    </article>
+    <article class="app-title-container">
         <a href="https://www.instagram.com/geoff_fodenpt/" target=”_blank”>
             <img class="circle instagram-color" src="{% static 'img/profile-insta.png' %}" alt="">
         </a>
@@ -186,18 +138,18 @@
                 <i class="fa fa-instagram insta-bg pr5 pl5"></i>
             </a>
         </div>
-    </div>
+    </article>
 </section>
 
 <!-- Instgram Posts *Card -->
-<section class="container-fluid black">
-    <div class="row">
-        <div class="col s12">
+<section class="container black">
+    <section class="row">
+        <article class="col s12">
             <div class="insta-bg post-header">
                 <h2 class="center-align pt20 pb20 white-text">Recent Posts</h2>
             </div>
-        </div>
-        <div class="col s12 m6 white">
+        </article>
+        <article class="col s12 m6 white">
             <div class="card hoverable">
                 <div class="card-content">
                     <span class="card-title grey-text text-darken-3 center-align">Stretching for Gains</span>
@@ -235,7 +187,7 @@
                         #sportsmassagetherapy #sportsmassagetherapist</p>
                 </div>
             </div>
-        </div>
+        </article>
         <div class="col s12 m6 white">
             <div class="card hoverable">
                 <div class="card-content">
@@ -281,22 +233,22 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 </section>
 
 <!-- Sign Up -->
-<section class="parallax-container main-sct-reg mb20">
-    <div class="parallax">
+<section class="container parallax-container main-sct-reg mb20">
+    <article class="parallax">
         <img src="{% static 'img/gym-three.jpg' %}">
-    </div>
-    <div class="app-title-container">
+    </article>
+    <article class="app-title-container">
         <h3 class="center-align white-text">Join Now</h3>
         <div class="pt10 center-align">
             <a class="btn-large red darken-1"
                 href="https://docs.google.com/forms/d/e/1FAIpQLSfglVtK3h-0vmbGZb0GRhug6_vlEapxjeGUfpHA4UzsUYO1NA/viewform">I’m
                 ready</a>
         </div>
-    </div>
+    </article>
 </section>
 
 {% endblock content %}
