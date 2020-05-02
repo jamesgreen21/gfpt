@@ -16,9 +16,9 @@ tests/report/
 
 # Database
 db.sqlite3
+gfpt/static
 
 # Environment
-/static/
 /.idea
 /.venv
 /.env
