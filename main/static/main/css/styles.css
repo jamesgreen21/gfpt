@@ -78,98 +78,46 @@
   transform: translateX(-50%);
 }
 
-.advert-container {
-  position: relative;
-  height: 40px;
-}
-
-.w1 {
-  animation: w1anim 8s infinite;
-}
-
-.w2 {
-  animation: w2anim 8s infinite;
-}
-
-.w3 {
-  animation: w3anim 8s infinite;
-}
-
-.w4 {
-  animation: w4anim 8s infinite;
-}
-
-@keyframes w1anim {
-  0% {
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  25% {
-    opacity: 0;
-  }
-}
-
-@keyframes w2anim {
-  25% {
-    opacity: 0;
-  }
-  35% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-}
-
-@keyframes w3anim {
-  50% {
-    opacity: 0;
-  }
-  60% {
-    opacity: 1;
-  }
-  75% {
-    opacity: 0;
-  }
-}
-
-@keyframes w4anim {
-  75% {
-    opacity: 0;
-  }
-  85% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
 .calorie-field h5 {
   display: inline;
 }
 
+.carousel {
+  height: 400px;
+}
+
 .carousel-img {
-  object-fit: cover;
   height: 100%;
 }
 
+.carousel-btn {
+  height: 400px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
 @media (min-width: 600px) {
+  .carousel-btn,
   .carousel {
     height: 600px;
   }
 }
 
 @media (min-width: 900px) {
+  .carousel-btn,
   .carousel {
     height: 800px;
   }
 }
 
 .carousel-btn {
-  height: 400px;
+  height: 00px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -190,6 +138,7 @@
 /*----------Calculator Section----------*/
 
 .article {
+  
   max-width: 600px;
 }
 

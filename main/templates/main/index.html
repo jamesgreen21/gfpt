@@ -8,65 +8,70 @@
 
 {% block content %}
 <!-- Header -->
-<header class="parallax-container app-header">
-    <div class="parallax">
-        <img id="animate3" src="{% static 'img/profile-main-long.jpg' %}">
+<header class="container-fluid pt50">
+    <div class="parallax-container app-header">
+        <div class="parallax">
+            <img id="animate3" src="{% static 'img/profile-main-long.jpg' %}">
+        </div>
+        <img id="animate2" class="app-sct-logo" src="{% static 'img/GF_Logo_2c.png' %}" alt="">
+        <!-- Advert *Card -->
+        <article id="animate1" class="main-reg-container pt10 pl10 pb10 pr10 grey darken-4 white-text z-depth-3">
+            <h4>Get FREE stuff</h4>
+            <p>Sign up for my weekly emails</p>
+            <form action="{% url 'subscribe' %}" method="POST">
+                {% csrf_token %}
+                <div class="input-field">
+                    {{ subscribe_form }}
+                </div>
+                <div class="btn-field center-align">
+                    <button class="btn-large red darken-1" type="submit">Go!</button>
+                </div>
+            </form>
+        </article>
     </div>
-    <img id="animate2" class="app-sct-logo" src="{% static 'img/GF_Logo_2c.png' %}" alt="">
-    <!-- Advert *Card -->
-    <article id="animate1" class="main-reg-container pt10 pl10 pb10 pr10 grey darken-4 white-text z-depth-3">
-        <h4>Get FREE stuff</h4>
-        <p>Sign up for my weekly emails</p>
-        <form action="{% url 'subscribe' %}" method="POST">
-            {% csrf_token %}
-            <div class="input-field">
-                {{ subscribe_form }}
-            </div>
-            <div class="btn-field center-align">
-                <button class="btn-large red darken-1" type="submit">Go!</button>
-            </div>
-        </form>
-    </article>
 </header>
 
 <!-- Customise *Card -->
-<section class="row black white-text">
-    <div class="col s12 center-align">
-        <h3 class="pt20 pb10 red-text">Start Getting Results Today</h3>
-        <div class="advert-container center-align">
-            <h4 class="advert-msg w1 m0">Personalised</h4>
-            <h4 class="advert-msg w2 m0">Online</h4>
-            <h4 class="advert-msg w3 m0">No Contract</h4>
-            <h4 class="advert-msg w4 m0">GFPT</h4>
+<section class="container-fluid black">
+    <div class="row white-text center-align">
+        <div class="col s12 l6">
+            <h3 class="pt20 pb10 red-text">Start Getting Results Today</h3>
+            <img class="circle responsive-img" src="{% static 'img/profile-main-short.jpg' %}" alt="">
+            </div>
+        <div class="col s12 l6">
+            <p>
+                I’m Geoff Foden and and I’m a personal trainer and online coach.
+            </p>
+            <p>
+                The internet is a minefield of conflicting information and it’s hard to know who to believe.
+            </p>
+            <p>
+                I get it because I’ve been there. That’s why I do what I do.
+                I help people make their outside reflect the awesome that they deserve.
+            </p>
         </div>
-        <p>
-            I’m Geoff Foden and and I’m a personal trainer and online coach.
-        </p>
-        <p>
-            The internet is a minefield of conflicting information and it’s hard to know who to believe.
-        </p>
-        <p>
-            I get it because I’ve been there. That’s why I do what I do.
-            I help people make their outside reflect the awesome that they deserve.
-        </p>
+    </div>
     </div>
 </section>
 
 <!-- Online Coaching *Card -->
-<section class="row grey darken-4 article white-text">
-    <div class="col s12 center-align">
-        <h3 class="pb10 red-text">GFPT Benefits</h3>
-        <p>So what is online coaching?</p>
-        <p>It’s like having me in your pocket .. 24/7.. (is that weird?!) to help and guide you on
-            your quest for greatness. </p>
-        <p>Here’s what my coaching includes:</p>
-        <ul>
-            <li class=" pt10 pb10">- Customised calories/macros suited to your goal</li>
-            <li class=" pt10 pb10">- Whatsapp support 24/7 whenever you need me</li>
-            <li class=" pt10 pb10">- Weekly Video Check in's from me</li>
-            <li class=" pt10 pb10">- Monthly catch up calls with me</li>
-        </ul>
-        <p>And most importantly it’s tailored to you and your preferences, your gym or equipment and your lifestyle.</p>
+<section class="container-fluid grey darken-4">
+    <div class="row grey darken-4 article white-text">
+        <div class="col s12 center-align">
+            <h3 class="pb10 red-text">GFPT Benefits</h3>
+            <p>So what is online coaching?</p>
+            <p>It’s like having me in your pocket .. 24/7.. (is that weird?!) to help and guide you on
+                your quest for greatness. </p>
+            <p>Here’s what my coaching includes:</p>
+            <ul>
+                <li class=" pt10 pb10">- Customised calories/macros suited to your goal</li>
+                <li class=" pt10 pb10">- Whatsapp support 24/7 whenever you need me</li>
+                <li class=" pt10 pb10">- Weekly Video Check in's from me</li>
+                <li class=" pt10 pb10">- Monthly catch up calls with me</li>
+            </ul>
+            <p>And most importantly it’s tailored to you and your preferences, your gym or equipment and your lifestyle.
+            </p>
+        </div>
     </div>
 </section>
 
@@ -82,34 +87,36 @@
 
 <!-- Testimonials *Carousel -->
 {% if testimonials.all %}
-<section class="row pt20">
-    <h3 class="white-text center-align">Testimonials</h3>
-    <h6 class="red-text center-align">Check out these guys who took the plunge and changed their physique</h6>
-    <div class="hide-on-small-only col m1">
-        <div class="carousel-btn">
-            <button onclick="$('.carousel').carousel('prev');" class="btn-floating btn grey darken-4">
-                <i class="fa fa-chevron-left"></i>
-            </button>
-        </div>
-    </div>
-    <div class="col s12 m10">
-        <div class="carousel carousel-slider center">
-            {% for testimonial in testimonials %}
-            <div class="carousel-item white black-text" href="#">
-                <img class="carousel-img" src="{{ testimonial.image.url }}">
-                <a class="btn-floating btn-large waves-effect waves-light red modal-trigger pulse"
-                    href="#modal{{ testimonial.id }}">
-                    <i class="material-icons">comment</i>
-                </a>
+<section class="container-fluid pt20">
+    <div class="row">
+        <h3 class="white-text center-align">Testimonials</h3>
+        <h6 class="red-text center-align">Check out these guys who took the plunge and changed their physique</h6>
+        <div class="hide-on-small-only col m1">
+            <div class="carousel-btn">
+                <button onclick="$('.carousel').carousel('prev');" class="btn-floating btn grey darken-4">
+                    <i class="fa fa-chevron-left"></i>
+                </button>
             </div>
-            {% endfor %}
         </div>
-    </div>
-    <div class="hide-on-small-only col m1">
-        <div class="carousel-btn">
-            <button onclick="$('.carousel').carousel('next');" class="btn-floating btn grey darken-4">
-                <i class="fa fa-chevron-right"></i>
-            </button>
+        <div class="col s12 m10">
+            <div class="carousel carousel-slider center">
+                {% for testimonial in testimonials %}
+                <div class="carousel-item white black-text" href="#">
+                    <img class="carousel-img" src="{{ testimonial.image.url }}">
+                    <a class="btn-floating btn-large waves-effect waves-light red modal-trigger pulse"
+                        href="#modal{{ testimonial.id }}">
+                        <i class="material-icons">comment</i>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="hide-on-small-only col m1">
+            <div class="carousel-btn">
+                <button onclick="$('.carousel').carousel('next');" class="btn-floating btn grey darken-4">
+                    <i class="fa fa-chevron-right"></i>
+                </button>
+            </div>
         </div>
     </div>
 </section>
@@ -142,21 +149,25 @@
 {% endif %}
 
 <!-- Calculator *Card -->
-<article class="row grey darken-4 article">
-    <div class="col s12 center-align pt20 pb20">
-        <img class="small-logo" src="{% static 'img/logo-2.png' %}" alt="">
-        <h4 class="white-text">Try my FREE Calorie Calculator</h4>
-        <p class="pt20">
-            <a class="btn-floating btn-large waves-effect waves-light red darken-1 pulse" href="{% url 'calc' %}"><i
-                    class="fa fa-calculator"></i></a>
-        </p>
+<article class="container-fluid grey darken-4 pt20 pb20">
+    <div class="row">
+        <div class="col s12 center-align article">
+            <img class="small-logo" src="{% static 'img/logo-2.png' %}" alt="">
+            <h4 class="white-text">Try my FREE Calorie Calculator</h4>
+            <p class="pt20">
+                <a class="btn-floating btn-large waves-effect waves-light red darken-1 pulse" href="{% url 'calc' %}"><i
+                        class="fa fa-calculator"></i></a>
+            </p>
+        </div>
     </div>
 </article>
 
 <!-- Logo -->
-<section class="row black white-text pt30 pb30">
-    <div class="col s12 center-align">
-        <img class="large-logo" src="{% static 'img/GF_Logo_2c.png' %}" alt="">
+<section class="container-fluid black white-text pt30 pb30">
+    <div class="row">
+        <div class="col s12 center-align">
+            <img class="large-logo" src="{% static 'img/GF_Logo_2c.png' %}" alt="">
+        </div>
     </div>
 </section>
 
@@ -179,87 +190,95 @@
 </section>
 
 <!-- Instgram Posts *Card -->
-<section class="row black">
-    <div class="col s12">
-        <div class="insta-bg post-header">
-            <h2 class="center-align pt20 pb20 white-text">Recent Posts</h2>
-        </div>
-    </div>
-    <div class="col s12 m6 white">
-        <div class="card hoverable">
-            <div class="card-content">
-                <span class="card-title grey-text text-darken-3 center-align">Stretching for Gains</span>
-            </div>
-            <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator" src="{% static 'img/stretching.PNG' %}">
-            </div>
-            <div class="card-content grey-text text-darken-3">
-                <span class="card-title activator"><i class="material-icons left">person_pin</i>Geoff says<i
-                        class="material-icons right">more_vert</i></span>
-                <p>⁣Tight glutes often = lower back pain, knee pain, hamstring pain, hip pain, problems getting low into
-                    a deadlift / other...⁣</p>
-                <div class="pt10 grey-text text-darken-2">
-                    <i class="fa fa-comment"></i> 0
-                    <span class="pl10"><i class="fa fa-eye blue-text"></i> 230</span>
-                </div>
-            </div>
-            <div class="card-reveal">
-                <span class="card-title grey-text text-darken-2"><i class="material-icons left">person_pin</i>
-                    geoff_fodenpt<i class="material-icons right">close</i></span>
-                <div class="video-container">
-                    <iframe width="852" height="852" src="https://www.youtube.com/embed/sWh13lEQlXo" frameborder="0"
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe> </div>
-                <p>⁣Tight glutes often = lower back pain, knee pain, hamstring pain, hip pain, problems getting low into
-                    a deadlift / other exercises and just a whole other shit heap of problems.⁣</p>
-                ⁣⁣<p>I’ve always found them hard to stretch, seated figure 4 stretch doesn’t seem to cut it, pigeon pose
-                    is the most uncomfortable thing in the world so this little hack is golden for me. </p>
-                <p>⁣⁣Use your forward foot to control the stretch and shuffle it back to deepen the stretch 👌🏻</p>
-                <p class="blue-text">#stretching #mobility #mobilitytraining #glutes #tightglutes #lowerbackpain
-                    #painrelief #backpain #personaltrainer #onlinepersonaltrainer #onlinecoach #sportsmassage
-                    #sportsmassagetherapy #sportsmassagetherapist</p>
+<section class="container-fluid black">
+    <div class="row">
+        <div class="col s12">
+            <div class="insta-bg post-header">
+                <h2 class="center-align pt20 pb20 white-text">Recent Posts</h2>
             </div>
         </div>
-    </div>
-    <div class="col s12 m6 white">
-        <div class="card hoverable">
-            <div class="card-content">
-                <span class="card-title grey-text text-darken-3 center-align">Bands for Gains</span>
-            </div>
-            <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator" src="{% static 'img/bands.PNG' %}">
-            </div>
-            <div class="card-content grey-text text-darken-3">
-                <span class="card-title activator"><i class="material-icons left">person_pin</i>Geoff says<i
-                        class="material-icons right">more_vert</i></span>
-                <p>One thing I’ve noticed while building home programmes is a lot of people have a couple of light
-                    dumbbells knocking about...</p>
-                <div class="pt10 grey-text text-darken-2">
-                    <i class="fa fa-comment"></i> 2
-                    <span class="pl10"><i class="fa fa-eye blue-text"></i> 250</span>
+        <div class="col s12 m6 white">
+            <div class="card hoverable">
+                <div class="card-content">
+                    <span class="card-title grey-text text-darken-3 center-align">Stretching for Gains</span>
+                </div>
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src="{% static 'img/stretching.PNG' %}">
+                </div>
+                <div class="card-content grey-text text-darken-3">
+                    <span class="card-title activator"><i class="material-icons left">person_pin</i>Geoff says<i
+                            class="material-icons right">more_vert</i></span>
+                    <p>⁣Tight glutes often = lower back pain, knee pain, hamstring pain, hip pain, problems getting low
+                        into
+                        a deadlift / other...⁣</p>
+                    <div class="pt10 grey-text text-darken-2">
+                        <i class="fa fa-comment"></i> 0
+                        <span class="pl10"><i class="fa fa-eye blue-text"></i> 230</span>
+                    </div>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-2"><i class="material-icons left">person_pin</i>
+                        geoff_fodenpt<i class="material-icons right">close</i></span>
+                    <div class="video-container">
+                        <iframe width="852" height="852" src="https://www.youtube.com/embed/sWh13lEQlXo" frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe> </div>
+                    <p>⁣Tight glutes often = lower back pain, knee pain, hamstring pain, hip pain, problems getting low
+                        into
+                        a deadlift / other exercises and just a whole other shit heap of problems.⁣</p>
+                    ⁣⁣<p>I’ve always found them hard to stretch, seated figure 4 stretch doesn’t seem to cut it, pigeon
+                        pose
+                        is the most uncomfortable thing in the world so this little hack is golden for me. </p>
+                    <p>⁣⁣Use your forward foot to control the stretch and shuffle it back to deepen the stretch 👌🏻</p>
+                    <p class="blue-text">#stretching #mobility #mobilitytraining #glutes #tightglutes #lowerbackpain
+                        #painrelief #backpain #personaltrainer #onlinepersonaltrainer #onlinecoach #sportsmassage
+                        #sportsmassagetherapy #sportsmassagetherapist</p>
                 </div>
             </div>
-            <div class="card-reveal">
-                <span class="card-title grey-text text-darken-2"><i class="material-icons left">person_pin</i>
-                    geoff_fodenpt<i class="material-icons right">close</i></span>
-                <div class="video-container">
-                    <iframe width="852" height="852" src="https://www.youtube.com/embed/Lwr23n9Cpu0" frameborder="0"
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
+        </div>
+        <div class="col s12 m6 white">
+            <div class="card hoverable">
+                <div class="card-content">
+                    <span class="card-title grey-text text-darken-3 center-align">Bands for Gains</span>
                 </div>
-                <p>One thing I’ve noticed while building home programmes is a lot of people have a couple of light
-                    dumbbells knocking about. </p>
-                <p>And remember when I was banging on about getting resistance bands...⁣</p>
-                <p>⁣If you combine a couple of light dumbbells with even a light resistance band and loop it round your
-                    body and the round the dumbbells you end up with a lot more resistance with the most resistance at
-                    the point of contraction.</p>
-                <p>Rows, presses, deadlift variations, squat variations , flyes, curls, the list is pretty much
-                    endless!⁣</p>
-                ⁣<p>If you’re struggling to get hold of resistance bands drop me a DM I have a couple of sources.</p>
-                ⁣<p>Yeah gym equipment is basically like crack now hit me up. </p>
-                ⁣<p class="blue-text">#resistancebands #dumbbells #makelightweightfeelheavy #workout #homeworkout
-                    #dumbbells #dumbbellworkout #gains #muscle #bodybuilding #gym #nogymnoproblem #personaltrainer
-                    #personaltraining #onlinepersonaltrainer #onlinecoach #onlinecoaching</p>
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src="{% static 'img/bands.PNG' %}">
+                </div>
+                <div class="card-content grey-text text-darken-3">
+                    <span class="card-title activator"><i class="material-icons left">person_pin</i>Geoff says<i
+                            class="material-icons right">more_vert</i></span>
+                    <p>One thing I’ve noticed while building home programmes is a lot of people have a couple of light
+                        dumbbells knocking about...</p>
+                    <div class="pt10 grey-text text-darken-2">
+                        <i class="fa fa-comment"></i> 2
+                        <span class="pl10"><i class="fa fa-eye blue-text"></i> 250</span>
+                    </div>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-2"><i class="material-icons left">person_pin</i>
+                        geoff_fodenpt<i class="material-icons right">close</i></span>
+                    <div class="video-container">
+                        <iframe width="852" height="852" src="https://www.youtube.com/embed/Lwr23n9Cpu0" frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                    <p>One thing I’ve noticed while building home programmes is a lot of people have a couple of light
+                        dumbbells knocking about. </p>
+                    <p>And remember when I was banging on about getting resistance bands...⁣</p>
+                    <p>⁣If you combine a couple of light dumbbells with even a light resistance band and loop it round
+                        your
+                        body and the round the dumbbells you end up with a lot more resistance with the most resistance
+                        at
+                        the point of contraction.</p>
+                    <p>Rows, presses, deadlift variations, squat variations , flyes, curls, the list is pretty much
+                        endless!⁣</p>
+                    ⁣<p>If you’re struggling to get hold of resistance bands drop me a DM I have a couple of sources.
+                    </p>
+                    ⁣<p>Yeah gym equipment is basically like crack now hit me up. </p>
+                    ⁣<p class="blue-text">#resistancebands #dumbbells #makelightweightfeelheavy #workout #homeworkout
+                        #dumbbells #dumbbellworkout #gains #muscle #bodybuilding #gym #nogymnoproblem #personaltrainer
+                        #personaltraining #onlinepersonaltrainer #onlinecoach #onlinecoaching</p>
+                </div>
             </div>
         </div>
     </div>

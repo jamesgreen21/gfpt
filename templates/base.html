@@ -42,7 +42,7 @@
 
 <!--Navbar-->
 <nav class="nav-extended z-depth-3 grey darken-4">
-    <div class="nav-wrapper ">
+    <div class="nav-wrapper">
         <a href="{% url 'index' %}" class="brand-logo center"><img class="small-logo"
                                                                    src="{% static 'img/logo-2.png' %}" alt=""></a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
@@ -89,9 +89,7 @@
 </ul>
 
 <!--Block Content-->
-<div class="container pt50">
-    {% block content %}{% endblock %}
-</div>
+{% block content %}{% endblock %}
 
 <!--Footer Content-->
 <footer class="page-footer black p0">

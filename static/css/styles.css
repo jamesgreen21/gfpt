@@ -215,10 +215,10 @@ input {
 
 /*Overwrite Materialize css*/
 nav,
-nav.nav-wrapper i,
-nav-wrapper.img,
-a.button-collapse,
-nav a.button-collapse i {
+nav .nav-wrapper i,
+nav-wrapper .img,
+a .button-collapse,
+nav a .button-collapse i {
   min-height: 80px;
   line-height: 80px;
 }
@@ -263,7 +263,7 @@ nav {
 }
 
 .small-logo {
-  height: 90px;
+  height: 80px;
 }
 
 .social i {
@@ -313,7 +313,7 @@ nav {
   width: 200px;
   position: absolute;
   bottom: 0;
-  right: 0;
+  right: 20px;
 }
 
 /*----------Buttons----------*/
