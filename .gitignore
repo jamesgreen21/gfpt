@@ -18,6 +18,7 @@ tests/report/
 db.sqlite3
 
 # Environment
+media
 /.idea
 /.venv
 /.env

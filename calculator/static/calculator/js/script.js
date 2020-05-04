@@ -25,6 +25,7 @@ class CaloriesCalculator {
 document
   .getElementById('calorieCalculator')
   .addEventListener('change', (event) => {
+    // Set input values
     var weight = document.getElementById('weight').value;
     var height = document.getElementById('height').value;
     var age = document.getElementById('age').value;
@@ -32,17 +33,22 @@ document
     var pal = document.getElementById('pal').value;
     var goal = document.getElementById('goal').value;
 
+    // Calculate results
     var newUser = new CaloriesCalculator(weight, height, age, gender, pal, goal);
     var result = newUser.daily_target();
     var targetEl = document.getElementById('calorieOutput')
 
     if (!result) {
         targetEl.innerHTML = 'Awaiting Inputs';
-        targetEl.classList.remove("green");
+        targetEl.classList.remove("green", "red");
         targetEl.classList.add("blue");
-    } else {
-        targetEl.innerHTML = newUser.daily_target() + ' Calories';
-        targetEl.classList.remove("blue");
+    } else if (result <= 0) {
+      targetEl.innerHTML = 'Check Inputs!';
+      targetEl.classList.remove("green", "blue");
+      targetEl.classList.add("red");
+  } else {
+        targetEl.innerHTML = result + ' Calories';
+        targetEl.classList.remove("blue", "red");
         targetEl.classList.add("green");
     }
   });
