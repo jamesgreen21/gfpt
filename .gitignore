@@ -16,7 +16,6 @@ tests/report/
 
 # Database
 db.sqlite3
-*static/
 
 # Environment
 /.idea
