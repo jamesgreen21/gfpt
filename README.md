@@ -1,6 +1,6 @@
 # GFPT App
 
-![GitHub Logo](static/img/GF Logo 2c.jpg)
+![](static/img/github_icon.jpg)
 
 A website app for Geoff Foden, Personal Training, in which users can read about Geoff, get useful hints and tips, register as a user and book PT sessions
 
