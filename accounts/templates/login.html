@@ -8,15 +8,19 @@
 
 {% block content %}
 <!-- Header -->
-<div class="parallax-container app-sct-header">
-    <div class="parallax">
-        <img src="{% static 'img/gym-one.jpg' %}">
-    </div>
-    <img class="app-sct-logo" src="{% static 'img/GF_Logo_2c.png' %}" alt="">
-    <div class="app-title-container white-text">
-        <h1>Login</h1>
-    </div>
-</div>
+<header class="container-fluid pt50">
+    <section class="row">
+        <section class="col s12 xl8 offset-xl2 parallax-container app-sct-header">
+            <article class="parallax">
+                <img src="{% static 'img/gym-one.jpg' %}">
+            </article>
+            <img class="app-sct-logo" src="{% static 'img/logo_dark_lg.png' %}" alt="">
+            <article class="app-title-container white-text">
+                <h1>Login</h1>
+            </article>
+        </section>
+    </section>
+</header>
 
 <!--Log In Form-->
 <div class="row white-text">

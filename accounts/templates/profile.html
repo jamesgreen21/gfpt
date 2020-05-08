@@ -9,22 +9,27 @@
 
 {% block content %}
 <!-- Header -->
-<div class="parallax-container app-sct-header">
-    <div class="parallax">
-        <img src="{% static 'img/gym-one.jpg' %}">
-    </div>
-    <img class="app-sct-logo" src="{% static 'img/GF_Logo_2c.png' %}" alt="">
-    <div class="app-title-container white-text">
-        <h1>{{title}}</h1>
-    </div>
-</div>
+<header class="container-fluid pt50">
+    <section class="row">
+        <section class="col s12 xl8 offset-xl2 parallax-container app-sct-header">
+            <article class="parallax">
+                <img src="{% static 'img/gym-one.jpg' %}">
+            </article>
+            <img class="app-sct-logo" src="{% static 'img/logo_dark_lg.png' %}" alt="">
+            <article class="app-title-container white-text">
+                <h1>{{title}}</h1>
+            </article>
+        </section>
+    </section>
+</header>
 
 <!--Profile Form-->
 <form class="row white-text" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="col s12 offset-m1 m10 offset-l2 l8 center-align pb20">
         <h5>My Profile</h5>
-        <p class="center-align">Welcome back {% if user.first_name %}{{user.first_name}}{% else %}{{user.username}}{% endif %}</p>
+        <p class="center-align">Welcome back
+            {% if user.first_name %}{{user.first_name}}{% else %}{{user.username}}{% endif %}</p>
         <div class="avatar-upload">
             <div class="avatar-edit">
                 <input type='file' id="id_image" name="image" accept=".png, .jpg, .jpeg" />
