@@ -18,7 +18,6 @@ def index(request):
         user_inputs = request.POST
         fields = ['weight', 'height', 'age', 'pal', 'goal', 'gender', 'height_unit', 'weight_unit']
         user_form = {user_input: user_inputs[user_input] for user_input in fields if user_input in user_inputs.keys()}
-        print(user_form)
         context['user_form'] = user_form
         context['results'] = Calculator(user_form).results()
 

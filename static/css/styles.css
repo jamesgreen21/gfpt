@@ -7,34 +7,34 @@ h2,
 h3,
 h4,
 h5,
-h6 {
-    font-family: 'Roboto Condensed', sans-serif;
+h6,
+label,
+input {
+      font-family: 'Roboto Condensed', sans-serif;
 }
 
 a,
 span,
 p,
-label,
-input {
     font-family: 'Roboto', sans-serif;
 }
 
 /*---------- BORDER ----------*/
 
 .bb1-white {
-    border-bottom: solid 2px white;
+    border-bottom: solid 2px white !important;
 }
 
 .bb2-white {
-    border-bottom: inset 4px white;
+    border-bottom: inset 4px white !important;
 }
 
 .b1-white {
-    border: solid 2px white;
+    border: solid 2px white !important;
 }
 
 .b2-white {
-    border: inset 4px white;
+    border: inset 4px white !important;
 }
 
 /*---------- COLOR ----------*/
